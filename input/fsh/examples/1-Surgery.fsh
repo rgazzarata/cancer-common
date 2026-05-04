@@ -1,9 +1,9 @@
-Instance: Surgery-Example
+Instance: Surgery1-Example
 InstanceOf: Surgery
 Usage: #example
 
-* subject = CancerPatient-Example
-* cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis-Example)
+* subject = CancerPatient1-Example
+* cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis1-Example)
 * intent.coding[0].code = #Definitive
 * intent.coding[0].display = "Definitive"
 * date = "2018-06-12"

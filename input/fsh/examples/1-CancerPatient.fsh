@@ -1,4 +1,4 @@
-Instance: CancerPatient-Example
+Instance: CancerPatient1-Example
 InstanceOf: CancerPatient
 Usage: #example
 

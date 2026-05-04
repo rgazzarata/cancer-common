@@ -104,9 +104,4 @@ CancerPatient1 --> Surgery1 : is the subject of
 CancerPatient1 --> Radiotherapy1 : is the subject of
 } 
 
-
-
-
-
-
-
+@enduml

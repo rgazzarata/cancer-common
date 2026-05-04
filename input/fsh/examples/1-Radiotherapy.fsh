@@ -1,9 +1,9 @@
-Instance: Radiotherapy-Example
+Instance: Radiotherapy1-Example
 InstanceOf: Radiotherapy
 Usage: #example
 
-* subject = CancerPatient-Example
-* cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis-Example)
+* subject = CancerPatient1-Example
+* cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis1-Example)
 * intent.coding[0].code = #Definitive
 * intent.coding[0].display = "Definitive"
 * startDate = "2018-09-10"

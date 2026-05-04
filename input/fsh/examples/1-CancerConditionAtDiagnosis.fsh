@@ -1,8 +1,8 @@
-Instance: CancerConditionAtDiagnosis-Example
+Instance: CancerConditionAtDiagnosis1-Example
 InstanceOf: CancerConditionAtDiagnosis
 Usage: #example
 
-* subject = CancerPatient-Example
+* subject = CancerPatient1-Example
 
 * histologyBehaviour.coding[0].system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
 * histologyBehaviour.coding[0].version = "3"

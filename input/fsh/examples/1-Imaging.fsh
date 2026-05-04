@@ -1,4 +1,4 @@
-Instance: Imaging-Example
+Instance: Imaging1-Example
 InstanceOf: Imaging
 Usage: #example
 

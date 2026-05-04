@@ -7,12 +7,12 @@ skinparam classAttributeIconSize 0
 ' ENTITIES
 ' ======================
 
-class "CancerPatient-Example" as CancerPatientExample [[Binary-CancerPatient-Example.html]] {
+class "CancerPatient1-Example" as CancerPatientExample [[Binary-CancerPatient1-Example.html]] {
   birthDate: 1975
   sexAtBirth: Female
 }
 
-class "CancerConditionAtDiagnosis-Example" as CCAD [[Binary-CancerConditionAtDiagnosis-Example.html]] {
+class "CancerConditionAtDiagnosis1-Example" as CCAD [[Binary-CancerConditionAtDiagnosis1-Example.html]] {
   histologyBehaviour: Adenocarcinoma, NOS
   bodySite: Lower lobe, lung
   tumourGradeSystem: Standard Histological Grading System
@@ -20,24 +20,24 @@ class "CancerConditionAtDiagnosis-Example" as CCAD [[Binary-CancerConditionAtDia
   visitDate: 2024-01-15T10:00:00+01:00
 }
 
-class "CancerStageClinical-Example" as CSC [[Binary-CancerStageClinical-Example.html]] {
+class "CancerStageClinical1-Example" as CSC [[Binary-CancerStageClinical1-Example.html]] {
   classificationType: Tumor Linphonode Metastasis
   type: Clinical
   value: T2, N0, M0
 }
 
-class "CancerStagePathological-Example" as CSP [[Binary-CancerStagePathological-Example.html]] {
+class "CancerStagePathological1-Example" as CSP [[Binary-CancerStagePathological1-Example.html]] {
   classificationType: Tumor Linphonode Metastasis
   type: Pathological
   value: T2, N1, M0
 }
 
-class "Imaging-Example" as Imaging [[Binary-Imaging-Example.html]] {
+class "Imaging1-Example" as Imaging [[Binary-Imaging1-Example.html]] {
   type: tbd
   bodySite: Lower lobe, lung
 }
 
-class "Surgery-Example" as Surgery [[Binary-Surgery-Example.html]] {
+class "Surgery1-Example" as Surgery [[Binary-Surgery1-Example.html]] {
   intent: Definitive
   date: 2018-06-12
   bodySite: Lower lobe, lung

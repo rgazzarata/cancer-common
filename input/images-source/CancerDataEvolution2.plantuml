@@ -25,18 +25,18 @@ package "Date 0 (2018-05-01)\nCancer Condition Diagnosis" {
     labReportDate[biomarker] 
     ImagingDate = 2018-05-01 'Date 0
   }
- 
 }
 
 ' Links inside Date 0
 CancerPatient1 --> CancerConditionAtDiagnosis1 : is affected by
 
- package "Date 4 (2018-10-30) \nEvidence + overall treatment response (Complete Remission)" {
-    class OverallTreatmentResponse1 {
-      treatmentResponseType = Complete Remission
-      date = 2018-10-30   'Date 4
-    }
-    class LastFollowUp1 {
+package "Date 4 (2018-10-30) \nEvidence + overall treatment response (Complete Remission)" {
+  class OverallTreatmentResponse1 {
+    treatmentResponseType = Complete Remission
+    date = 2018-10-30   'Date 4
+  }
+
+  class LastFollowUp1 {
      vitalStatus = Alive
      evidenceOfDisease = No
      causeOfDeath = Null
@@ -44,17 +44,18 @@ CancerPatient1 --> CancerConditionAtDiagnosis1 : is affected by
      date = 2018-10-30   'Date 4
   }
 
-    class ClinicalCancerProgression1 {
-      diseaseStatus = Complete Remission
-      extentType = Null
-      loco-regionalSite = Null
-      MetastaticSite = Null
-      tumourGrade
-      assertedDate = 2018-10-30   'Date 4
-    }
-
- }
+  class ClinicalCancerProgression1 {
+    diseaseStatus = Complete Remission
+    extentType = Null
+    loco-regionalSite
+    MetastaticSite = Null
+    tumourGrade
+    assertedDate = 2018-10-30   'Date 4
+  }
+}
 
 CancerConditionAtDiagnosis1 --> OverallTreatmentResponse1 : has
 CancerPatient1 --> LastFollowUp1 : has
 CancerConditionAtDiagnosis1 --> ClinicalCancerProgression1 : evolves throught
+
+@enduml
