@@ -33,7 +33,7 @@
                 <a class="dropdown-item maturity-green" href="journey.html">Cancer Patient Journey</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="journey-data-evolution.html">Data Evolution</a>
+                <a class="dropdown-item maturity-green" href="journey-data-evolution.html">Data Evolution</a>
             </li>
         </ul>
     </li>

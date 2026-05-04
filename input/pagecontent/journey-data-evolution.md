@@ -35,9 +35,9 @@ Contextually, a **CancerPatient** instance (**CancerPatient1**) is instantiated 
 To represent the diagnostic evidence, an **Imaging** instance (**Imaging1**) is created, describing the MRI examination performed at Date 0. This imaging instance represents the clinical evidence on which the clinical staging assessment is based.
 
 Based on this imaging evidence, a **CancerStage** instance (**CancerStage1**) is instantiated to represent the **clinical stage** of the disease. In this example, the clinical stage is defined as:
-•	type = Clinical,
-•	classificationType = TNM,
-•	value = T2, N0, M0.
+*	type = Clinical,
+*	classificationType = TNM,
+*	value = T2, N0, M0.
 
 The CancerStage instance (**CancerStage1**) is explicitly linked to the Imaging instance (**Imaging1**) through which it was defined, ensuring traceability between the staging assessment and the underlying diagnostic evidence. This explicit relationship preserves information on how and on the basis of which evidence the clinical stage was determined.
 
@@ -48,9 +48,9 @@ At the end of Date 0, the CancerConditionAtDiagnosis, CancerPatient, Imaging evi
 At **Date 1** (**2018-06-12**), the patient undergoes a surgical procedure with definitive intent. A **Surgery** instance (**Surgery1**) is created to represent this treatment event, linked to both the **CancerPatient1** (as subject) and the **CancerConditionAtDiagnosis1** (as treatment target).
 
 Following surgery, new pathological evidence becomes available. Instead of updating the existing clinical stage, a **new CancerStage instance** (**CancerStage2**) is created to represent the pathological staging. This second stage is characterised by:
-•	type = Pathological,
-•	classificationType = TNM,
-•	value = T2, N1, M0.
+*	type = Pathological,
+*	classificationType = TNM,
+*	value = T2, N1, M0.
 
 The pathological stage (**CancerStage2**) is explicitly linked to the surgical procedure (**Surgery1**) through which it was defined, while still referring to the same CancerConditionAtDiagnosis (**CancerConditionAtDiagnosis1**). The coexistence of clinical and pathological stages highlights the temporal nature of staging and preserves traceability of how staging information evolves over time.
 
@@ -59,9 +59,9 @@ The pathological stage (**CancerStage2**) is explicitly linked to the surgical p
 Between **Date 2** (**2018-09-10**) and **Date 3** (**2018-10-12**), the patient receives a course of radiotherapy with definitive intent, in a postoperative (adjuvant) setting.
 
 This treatment is represented by a **Radiotherapy** instance (**Radiotherapy1**), capturing:
-•	start and end dates,
-•	treatment intent,
-•	target body site.
+*	start and end dates,
+*	treatment intent,
+*	target body site.
 
 The radiotherapy instance (**Radiotherapy1**) is linked to the **CancerPatient1** as subject and to the **CancerConditionAtDiagnosis1** as treatment target. No existing entities are modified; instead, the treatment event is modeled as a new instance associated with the condition previously diagnosed and staged.
 
@@ -83,22 +83,22 @@ This second step represents the first **post treatment assessment** of the cance
 At **Date 4** (**2018-10-30**), after the completion of surgery and radiotherapy, new clinical evidence becomes available and a follow up visit takes place. This visit represents the first structured assessment of the response to the initial treatment strategy.
 
 At this point, an **OverallTreatmentResponse** instance (**OverallTreatmentResponse1**) is instantiated to capture the evaluation of how the cancer condition has responded to the treatments administered so far. In this example, the overall treatment response is assessed as:
-•	treatmentResponseType = Complete Remission,
-•	date = 2018-10-30.
+*	treatmentResponseType = Complete Remission,
+*	date = 2018-10-30.
 
 The OverallTreatmentResponse instance is explicitly linked to the **CancerConditionAtDiagnosis** (**CancerConditionAtDiagnosis1**), ensuring that the response assessment is clearly associated with the condition that has been treated.
 
 Based on this treatment response evaluation, clinicians subsequently assess the current status of the disease. This assessment is captured through the instantiation of a **ClinicalCancerProgression** instance (**ClinicalCancerProgression1**), which represents the disease status at Date 4. In this case, the disease status is recorded as:
-•	diseaseStatus = Complete Remission,
-•	extentType = Null,
-•	assertedDate = 2018-10-30.
+*	diseaseStatus = Complete Remission,
+*	extentType = Null,
+*	assertedDate = 2018-10-30.
 
 The ClinicalCancerProgression instance  (**ClinicalCancerProgression1**) is linked to the same **CancerConditionAtDiagnosis1**, reflecting the evolution of the disease over time without overwriting previous information. This explicit separation between treatment response evaluation and disease status allows the model to preserve the clinical reasoning process and to distinguish between response assessment and disease state assertion.
 
 In parallel, the patient’s status is assessed and recorded through the instantiation of a **LastFollowUp** instance (**LastFollowUp1**). At Date 4, the patient is:
-•	alive,
-•	with no evidence of disease,
-•	date = 2018-10-30.
+*	alive,
+*	with no evidence of disease,
+*	date = 2018-10-30.
 
 The LastFollowUp instance  (**LastFollowUp1**) is linked to the **CancerPatient** (**CancerPatient1**) and captures the patient centred outcome of the follow up visit.
 
@@ -124,16 +124,16 @@ However, from a data modeling perspective, each follow up visit represents a dis
 At **Date 5** (**2019-02-28**), after additional diagnostic tests, the patient undergoes a follow up visit aimed at monitoring disease status in the absence of active treatment.
 
 At this time point, clinicians confirm the previously observed disease status. A new **ClinicalCancerProgression** instance (**ClinicalCancerProgression2**) is instantiated to represent the disease assessment at this follow up visit. In this example, the disease status remains:
-•	diseaseStatus = Complete Remission,
-•	extentType = Null,
-•	assertedDate = 2019-02-28.
+*	diseaseStatus = Complete Remission,
+*	extentType = Null,
+*	assertedDate = 2019-02-28.
 
 Although the disease status does not change compared to the previous assessment, a **new instance** is created to explicitly capture the confirmation of complete remission at this specific moment in time. The instance is linked to the same **CancerConditionAtDiagnosis** (**CancerConditionAtDiagnosis1**), preserving continuity while maintaining temporal specificity.
 
 In parallel, a new **LastFollowUp** instance (**LastFollowUp2**) is instantiated to record the patient’s status at Date 5. The patient is documented as:
-•	vitalStatus = Alive,
-•	evidenceOfDisease = No,
-•	date = 2019 02 28.
+*	vitalStatus = Alive,
+*	evidenceOfDisease = No,
+*	date = 2019 02 28.
 
 The LastFollowUp instance (**LastFollowUp2**) is associated with the **CancerPatient1** and reflects the patient centred outcome of the follow up visit.
 
@@ -167,16 +167,16 @@ This step illustrates a **disease evolution event** occurring after a period of 
 At **Date 7** (**2019-08-31**), following one or more diagnostic tests, the patient undergoes a follow up visit during which clinicians identify a **recurrence of the disease**.
 
 At this time point, a new **ClinicalCancerProgression** instance (**ClinicalCancerProgression4**) is created to represent the updated disease status. In this example, the disease is assessed as:
-•	diseaseStatus = Recurrence,
-•	extentType = Loco regional,
-•	assertedDate = 2019-08-31.
+*	diseaseStatus = Recurrence,
+*	extentType = Loco regional,
+*	assertedDate = 2019-08-31.
 
 The instantiation of a new ClinicalCancerProgression reflects a true **clinical change** with respect to previous assessments. This new instance does not overwrite earlier progression records but coexists with them, explicitly marking a new phase in the cancer journey.
 
 In parallel, a new **LastFollowUp** instance (**LastFollowUp4**) is created to record the patient’s status at the same visit. At Date 7, the patient is:
-•	vitalStatus = Alive,
-•	evidenceOfDisease = Yes,
-•	date = 2019-08-31.
+*	vitalStatus = Alive,
+*	evidenceOfDisease = Yes,
+*	date = 2019-08-31.
 
 Both the ClinicalCancerProgression (**ClinicalCancerProgression4**) and LastFollowUp (**LastFollowUp4**) instances are linked to the previously instantiated **CancerConditionAtDiagnosis1** and **CancerPatient1**, ensuring continuity while clearly representing the transition from remission to active disease.
 
@@ -185,15 +185,15 @@ Both the ClinicalCancerProgression (**ClinicalCancerProgression4**) and LastFoll
 As a consequence of the documented recurrence, clinicians decide to initiate a new treatment course.
 
 Between **Date 8** (**2019-09-10**) and **Date 9** (**2019-12-16**), the patient receives a **systemic treatment**. This treatment episode is represented by a **SystemicTreatment** instance (**SystemicTreatment1**), capturing:
-•	treatment type (e.g. chemotherapy),
-•	treatment intent (Definitive),
-•	start date (2019-09-10),
-•	end date (2019-12-16).
+*	treatment type (e.g. chemotherapy),
+*	treatment intent (Definitive),
+*	start date (2019-09-10),
+*	end date (2019-12-16).
 
 The SystemicTreatment instance is linked:
-•	to the **CancerPatient1** as subject,
-•	to the **CancerConditionAtDiagnosis1** as treatment target,
-•	and explicitly to the **ClinicalCancerProgression** instance representing the recurrence (**ClinicalCancerProgression4**).
+*	to the **CancerPatient1** as subject,
+*	to the **CancerConditionAtDiagnosis1** as treatment target,
+*	and explicitly to the **ClinicalCancerProgression** instance representing the recurrence (**ClinicalCancerProgression4**).
 
 This explicit linkage makes clear that the treatment decision is driven by the newly identified disease recurrence and anchors the second treatment course to the specific clinical context in which it was initiated.
 
@@ -217,22 +217,22 @@ This step illustrates the follow up visit performed after the completion of the 
 At **Date 10** (**2020-01-02**), after one or more diagnostic tests, the patient undergoes a follow up visit aimed at assessing the response to the systemic treatment initiated after the documented recurrence.
 
 At this time point, clinicians first evaluate the response to the second treatment course. An **OverallTreatmentResponse** instance (**OverallTreatmentResponse2**) is instantiated to capture this assessment. In this example, the overall treatment response is evaluated as:
-•	treatmentResponseType = Partial Remission,
-•	date = 2020-01-02.
+*	treatmentResponseType = Partial Remission,
+*	date = 2020-01-02.
 
 The OverallTreatmentResponse instance (**OverallTreatmentResponse2**) is linked to the **CancerConditionAtDiagnosis1** and explicitly refers to the previously recorded **ClinicalCancerProgression** instance representing the recurrence (**ClinicalCancerProgression4**). This relationship makes clear that the response assessment is performed in relation to the disease state identified at the time of recurrence.
 
 Based on this treatment response assessment, clinicians subsequently update the disease status at the current visit. This is represented through the instantiation of a new **ClinicalCancerProgression** instance (**ClinicalCancerProgression5**), which captures the disease status at Date 10. In this case:
-•	diseaseStatus = Partial Remission,
-•	extentType = Loco regional,
-•	assertedDate = 2020-01-02.
+*	diseaseStatus = Partial Remission,
+*	extentType = Loco regional,
+*	assertedDate = 2020-01-02.
 
 As in previous steps, the new ClinicalCancerProgression instance (**ClinicalCancerProgression5**) does not replace earlier progression records but coexists with them, explicitly documenting the evolution of the disease over time.
 
 In parallel, the patient’s status at the follow up visit is recorded through a new **LastFollowUp** instance (**LastFollowUp5**). At Date 10, the patient is:
-•	vitalStatus = Alive,
-•	evidenceOfDisease = Yes,
-•	date = 2020-01-02.
+*	vitalStatus = Alive,
+*	evidenceOfDisease = Yes,
+*	date = 2020-01-02.
 
 The LastFollowUp instance is linked to the **CancerPatient1** and reflects the persistence of disease despite a partial response to treatment.
 
@@ -256,16 +256,16 @@ This final step illustrates the last phase of the cancer journey, characterised 
 At **Date 11** (**2020-04-15**), after one or more diagnostic tests, the patient undergoes a follow up visit during which clinicians evaluate a further evolution of the disease.
 
 At this time point, a new **ClinicalCancerProgression** instance (**ClinicalCancerProgression6**) is instantiated to capture the updated disease status. In this example, the disease is assessed as:
-•	diseaseStatus = Progression,
-•	extentType = Metastatic,
-•	assertedDate = 2020-04-15.
+*	diseaseStatus = Progression,
+*	extentType = Metastatic,
+*	assertedDate = 2020-04-15.
 
 This new instance represents a clear clinical change with respect to the previously documented partial remission and marks a further step in disease evolution. As in all previous steps, the progression is recorded through the creation of a new instance rather than by updating existing ones, preserving the full history of disease assessments over time.
 
 In parallel, a new **LastFollowUp** instance (**LastFollowUp6**) is created to record the patient’s status at the same follow up visit. At Date 11, the patient is:
-•	vitalStatus = Alive,
-•	evidenceOfDisease = Yes,
-•	date = 2020-04-15.
+*	vitalStatus = Alive,
+*	evidenceOfDisease = Yes,
+*	date = 2020-04-15.
 
 Both the ClinicalCancerProgression (**ClinicalCancerProgression6**) and LastFollowUp (**LastFollowUp6**) instances are linked to the existing **CancerConditionAtDiagnosis1** and **CancerPatient1**, ensuring longitudinal consistency while documenting the worsening of disease status.
 
@@ -273,10 +273,10 @@ Both the ClinicalCancerProgression (**ClinicalCancerProgression6**) and LastFoll
 
 At **Date 12** (**2020-06-28**), the patient dies. This event represents the conclusion of the cancer journey and is captured through the instantiation of a new **LastFollowUp** instance (**LastFollowUp7**).
 At this time point, the patient status is recorded as:
-•	vitalStatus = Dead,
-•	deathDate = 2020 06 28,
-•	causeOfDeath = specified as available,
-•	date = 2020-06-28.
+*	vitalStatus = Dead,
+*	deathDate = 2020 06 28,
+*	causeOfDeath = specified as available,
+*	date = 2020-06-28.
 
 No new disease progression instance is created at this stage, as death represents a **patient-level outcome** rather than a further evolution of disease status. The explicit separation between disease progression and patient outcome allows the model to clearly distinguish clinical assessments from final outcomes.
 
