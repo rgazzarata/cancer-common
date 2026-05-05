@@ -41,7 +41,7 @@
         <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-orange" href="logicalmodels.html">Logical Model</a>
+                <a class="dropdown-item maturity-green" href="logicalmodels.html">Logical Model</a>
             </li>
             <li>
                 <a class="dropdown-item maturity-orange" href="journey-example.html">Cancer Patient Journey Example</a>
