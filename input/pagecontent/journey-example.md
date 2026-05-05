@@ -70,7 +70,7 @@ This section represents a further disease evolution event. A new ClinicalCancerP
 
 A corresponding LastFollowUp instance records that the patient remains alive with evidence of disease at the same time point.
 
-### Death
+### Patient's Death (Date 12)
 This final section records the patient outcome. A new LastFollowUp instance captures vital status as Dead, the date of death, and (when available) the cause of death.
 
 In this example, the cause of death is illustrated using an ICD-10 code.
