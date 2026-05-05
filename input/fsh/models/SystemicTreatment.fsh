@@ -35,4 +35,4 @@ Expression: "(ongoing = true implies endDate.empty()) and (endDate.exists() impl
 Invariant: st-2
 Description: "If endDate is present, it should be greater than or equal to startDate."
 Severity: #warning
-Expression: "endDate.empty() or end
+Expression: "endDate.empty() or endDate > StartDate"

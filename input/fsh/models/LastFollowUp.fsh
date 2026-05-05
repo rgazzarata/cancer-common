@@ -36,13 +36,9 @@ Invariant: lfu-3
 Description: "DeathDate must be present if VitalStatus is Dead; otherwise, it must not be present."
 Expression: "(vitalStatus.coding.where(code = 'Dead').exists()) = deathDate.exists()"
 Severity: #error
+Invariant: lfu-4
+Description: "DeathDate must not be present if VitalStatus is Alive."
+Severity: #error
+Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
 
-Invariant: lfu-4
-Description: "DeathDate must not be present if VitalStatus is Alive."
-Severity: #error
-Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
-Invariant: lfu-4
-Description: "DeathDate must not be present if VitalStatus is Alive."
-Severity: #error
-Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
 
