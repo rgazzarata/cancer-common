@@ -18,6 +18,8 @@ Compared to the conceptual Data Evolution example, this logical example shows a 
 
 The diagrams presented in the following sections use schematic representations based on the Logical Model, and are intended to support implementers in understanding **how the model can be applied in practice**, without prescribing a specific technical implementation.
 
+For ease of consultation and reuse, especially for readers less familiar with FHIR, a complete representation of the exaple is also available in Excel format ([LogicalModelExample.xlsx](https://github.com/hl7-eu/cancer-common/raw/refs/heads/master/_sources/LogicalModelExample_v2.xlsx)).
+
 ### Diagnosis + First Treatment (Date 0 - 3)
 This section instantiates the logical entities required to represent diagnosis and the initial treatment phase. The example includes instances of CancerPatient, CancerConditionAtDiagnosis, Imaging, CancerStage (clinical and pathological), Surgery and Radiotherapy.
 
