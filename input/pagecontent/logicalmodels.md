@@ -6,9 +6,9 @@ For this reason, readers are strongly encouraged to first familiarise themselves
 
 In this page, the Logical Model is presented at a high‑level overview, with the purpose of supporting navigation and understanding of the model structure rather than replacing the detailed specifications. For each entity, this section provides:
 
-*a short descriptive summary of the entity’s role in the cancer journey,
-*a schematic graphical representation illustrating its main attributes and relationships,
-*and a direct link to the corresponding Logical Model page, where the full and formal specification is available.
+* a short descriptive summary of the entity’s role in the cancer journey,
+* a schematic graphical representation illustrating its main attributes and relationships,
+* and a direct link to the corresponding Logical Model page, where the full and formal specification is available.
 
 The authoritative definitions of all concepts are maintained in the [Glossary](glossary.html). This page does not redefine concepts; instead, it complements the conceptual description with an implementation‑oriented view.
 
