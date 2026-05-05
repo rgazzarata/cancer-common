@@ -1,4 +1,4 @@
-Instance: CancerStagePathological1-Example
+/* Instance: CancerStagePathological1-Example
 InstanceOf: CancerStage
 Usage: #example
 
@@ -9,6 +9,7 @@ Usage: #example
 * value[+].id = "N1"
 * value[+].id = "M0"
 * type.coding[0].code = #Pathological
-* type.coding[0].display = "Pathological"
+* type.coding[0].display = "Pathological" */
+
 /* To be updated*/
 /* * evidenceReference = Reference(Surgery1-Example) */

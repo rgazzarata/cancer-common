@@ -1,16 +1,16 @@
 Logical: SystemicTreatment
 Id: SystemicTreatment
 Title: "SystemicTreatment"
-Description: "Logical model representing a systemic anti-cancer treatment episode delivered to the patient, either at diagnosis or following disease progression. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet SystemicTreatment)."
+Description: "Logical model representing a systemic anti-cancer treatment episode delivered to the patient, either at diagnosis or following disease progression. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet SystemicTreatment)."
 Characteristics: #can-be-target
 
 * subject 1..1 CancerPatient "Subject"
 * subject ^definition = "Reference to the patient (subject) receiving systemic treatment."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerConditionAtDiagnosisReference"
 * cancerConditionAtDiagnosisReference ^definition = "Reference to the cancer condition at diagnosis targeted by systemic treatment."
-* clinicalCancerProgresionReference 0..1 Reference(ClinicalCancerProgression) "ClinicalCancerProgresionReference"
-* clinicalCancerProgresionReference ^definition = "Reference to the clinical progression event, if treatment is delivered in response to progression."
-* clinicalCancerProgresionReference ^comment = "It is not only required at the time of diagnosis; it must be provided in the event of ClinicalCancerProgression."
+* clinicalCancerProgressionReference 0..1 Reference(ClinicalCancerProgression) "ClinicalCancerProgresionReference"
+* clinicalCancerProgressionReference ^definition = "Reference to the clinical progression event, if treatment is delivered in response to progression."
+* clinicalCancerProgressionReference ^comment = "It is not only required at the time of diagnosis; it must be provided in the event of ClinicalCancerProgression."
 * intent 1..1 CodeableConcept "Intent"
 * intent ^definition = "Treatment intent (Definitive/curative vs Palliative)."
 * intent ^comment = "Choice: Definitive | Palliative"
@@ -27,3 +27,12 @@ Characteristics: #can-be-target
 * setting 0..1 CodeableConcept "Setting"
 * setting ^definition = "Strategic timing/setting of systemic treatment (e.g. neoadjuvant, adjuvant, concomitant, alone)."
 * setting ^comment = "Choice: Alone |  Preoperative/Neoadjuvant | Postoperative/Adjuvant | Concomitant"
+
+Invariant: st-1
+Description: "If ongoing is true, endDate must not be present; if endDate is not present, ongoing must be true."
+Severity: #error
+Expression: "(ongoing = true implies endDate.empty()) and (endDate.exists() implies ongoing.empty() or ongoing = false)"
+Invariant: st-2
+Description: "If endDate is present, it should be greater than or equal to startDate."
+Severity: #warning
+Expression: "endDate.empty() or end

@@ -18,6 +18,7 @@ note left of SystemicTreatment::intent
 Choice: Definitive | Palliative 
 end note
 note left of SystemicTreatment::setting
-Choice: Alone |  Preoperative/Neoadjuvant | Postoperative/Adjuvant | Concomitant
+Choice: Alone |  Preoperative/Neoadjuvant 
+| Postoperative/Adjuvant | Concomitant
 end note
 @enduml

@@ -14,7 +14,7 @@ The authoritative definitions of all concepts are maintained in the [Glossary](g
 
 Detailed descriptions of each individual attribute, including clinical meaning, cardinality, data type, terminology bindings, constraints, and notes, are provided in the dedicated **Logical Model** pages linked from each entity.
 
-For ease of consultation and reuse—especially for readers less familiar with FHIR—a complete representation of the Logical Model is also available in Excel format, offering a tabular view of entities, attributes, descriptions, and notes ([Cancer_Common_Logical_Model_20260408.xlsx](https://github.com/hl7-eu/cancer-common/raw/refs/heads/master/_sources/Cancer_Common_Logical_Model_20260408.xlsx)).
+For ease of consultation and reuse, especially for readers less familiar with FHIR, a complete representation of the Logical Model is also available in Excel format, offering a tabular view of entities, attributes, descriptions, and notes ([Cancer_Common_Logical_Model_20260521.xlsx](https://github.com/hl7-eu/cancer-common/raw/refs/heads/master/_sources/Cancer_Common_Logical_Model_20260521.xlsx)).
 
 ### Overview
 
@@ -51,7 +51,7 @@ Represents the cancer condition as it is first diagnosed, capturing the initial 
   <p></p>
   <figure>
     {% include CancerConditionAtDiagnosis_LM.svg %}
-    <figcaption><strong>Figure 3: CancerConditionAtDiagnosis logical model</strong></figcaption>
+    <figcaption><strong>Figure 2: CancerConditionAtDiagnosis logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -62,16 +62,59 @@ FHIR Logical Model: [StructureDefinition-CancerConditionAtDiagnosis.html](Struct
 
 Represents the stage at first diagnosis and can be clinical or pathological. A clinical stage is always expected and is defined based on imaging evidence. A pathological stage may additionally be recorded, when available, and is defined based on surgical evidence.
 
+Different staging or grading classification systems are used in oncology, depending on the tumour type and clinical context.
+At the logical model level, this guide does not restrict the set of supported classification systems. Instead, the applied system is indicated through the classificationType, while the corresponding staging values are expressed using one or more CancerStageComponent instances.
+
+Examples of commonly used classification systems include:
+* **TNM** staging, widely adopted for most solid tumours and represented through multiple components (T, N, M);
+* **Gleason / ISUP Grade Group**, used for prostate cancer grading;
+* **FIGO** staging systems, used for gynaecological malignancies;
+* other tumour‑specific staging or grading systems adopted in clinical practice.
+
+These examples are provided for illustration purposes and are not intended to represent an exhaustive or prescriptive list.
+
+The stage value itself is not represented as a single field but through one or more **CancerStageComponent** instances. This approach supports both simple staging systems, where a single stage value is sufficient, and composite systems such as **TNM**, where the overall stage is expressed through multiple components.
+
+For example:
+- in single‑value staging systems (e.g. stage group–based classifications), the stage is represented by a single CancerStageComponent;
+- in the TNM system, the stage is represented by three CancerStageComponent instances, one for each of **T (Tumour)**, **N (Nodes)**, and **M (Metastasis)**.
+
+In the case of TNM, the staging classification system is explicitly indicated in the CancerStage, while the individual components capture the specific values of T, N, and M.
+
+
 <div style="text-align:center;">
   <p></p>
   <figure>
     {% include CancerStage_LM.svg %}
-    <figcaption><strong>Figure 4: CancerStage logical model</strong></figcaption>
+    <figcaption><strong>Figure 3: CancerStage logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
 
 FHIR Logical Model: [StructureDefinition-CancerStage.html](StructureDefinition-CancerStage.html)
+
+#### CancerStageComponent
+
+Represents a single component of the cancer stage, expressed as a pair consisting of a **code** and an associated **value**. This logical model is used to consistently represent staging information across different classification systems.
+
+In most staging systems, only one CancerStageComponent is required to capture the stage value. In more complex systems, such as **TNM**, multiple components are used to represent the full stage:
+* one component for **T** (tumour),
+* one component for **N** (lymph nodes),
+* and one component for **M** (metastasis).
+
+Each CancerStageComponent captures which staging element is being reported and its corresponding value, enabling a flexible and extensible representation of cancer staging while preserving full computability and traceability.
+
+<div style="text-align:center;">
+  <p></p>
+  <figure>
+    {% include CancerStageComponent_LM.svg %}
+    <figcaption><strong>Figure 4: CancerStageComponent logical model</strong></figcaption>
+  </figure>
+  <p></p>
+</div>
+
+FHIR Logical Model: [StructureDefinition-CancerStageComponent.html](StructureDefinition-CancerStageComponent.html)
+
 
 #### Imaging
 
@@ -96,7 +139,7 @@ Represents the patient affected by one or more cancer conditionsand acts as the 
   <p></p>
   <figure>
     {% include Patient_LM.svg %}
-    <figcaption><strong>Figure 2: CancerPatient logical model</strong></figcaption>
+    <figcaption><strong>Figure 6: CancerPatient logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -111,7 +154,7 @@ Represents a surgical treatment episode delivered to the patient, either as part
   <p></p>
   <figure>
     {% include Surgery_LM.svg %}
-    <figcaption><strong>Figure 8: Surgery logical model</strong></figcaption>
+    <figcaption><strong>Figure 7: Surgery logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -126,7 +169,7 @@ Represents a management strategy in which the patient is monitored over time wit
   <p></p>
   <figure>
     {% include ActiveSurveillance_LM.svg %}
-    <figcaption><strong>Figure 9: ActiveSurveillance logical model</strong></figcaption>
+    <figcaption><strong>Figure 8: ActiveSurveillance logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -141,7 +184,7 @@ Represents a radiotherapy treatment course delivered to the patient, including i
   <p></p>
   <figure>
     {% include Radiotherapy_LM.svg %}
-    <figcaption><strong>Figure 10: Radiotherapy logical model</strong></figcaption>
+    <figcaption><strong>Figure 9: Radiotherapy logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -156,7 +199,7 @@ Represents a systemic anti‑cancer treatment episode (e.g. chemotherapy, immuno
   <p></p>
   <figure>
     {% include SystemicTreatment_LM.svg %}
-    <figcaption><strong>Figure 11: SystemicTreatment logical model</strong></figcaption>
+    <figcaption><strong>Figure 10: SystemicTreatment logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -171,7 +214,7 @@ Represents the overall assessment of how the cancer condition has responded to o
   <p></p>
   <figure>
     {% include OverallCancerTreatmentResponse_LM.svg %}
-    <figcaption><strong>Figure 12: OverallCancerTreatmentResponse logical model</strong></figcaption>
+    <figcaption><strong>Figure 11: OverallCancerTreatmentResponse logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -186,7 +229,7 @@ Represents the assessment of the patient’s status at a specific follow‑up vi
   <p></p>
   <figure>
     {% include LastFollowUp_LM.svg %}
-    <figcaption><strong>Figure 6: LastFollowUp logical model</strong></figcaption>
+    <figcaption><strong>Figure 12: LastFollowUp logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -201,24 +244,10 @@ Represents the evolution of the disease over time, documenting changes in diseas
   <p></p>
   <figure>
     {% include ClinicalCancerProgression_LM.svg %}
-    <figcaption><strong>Figure 7: ClinicalCancerProgression logical model</strong></figcaption>
+    <figcaption><strong>Figure 13: ClinicalCancerProgression logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
 
 FHIR Logical Model: [StructureDefinition-ClinicalCancerProgression.html](StructureDefinition-ClinicalCancerProgression.html)
 
-
-
-<!-- ### Models' relationship
-
-<div style="text-align:center;">
-  <p></p>
-    <figure class="uml-diagram" style="width:95%;">
-      {% include CancerLogicalModel_LM_refs.svg %}
-      <figcaption>
-        <strong>Figure 13: Cancer Common Logical Model (References)</strong>
-      </figcaption>
-    </figure>
-  <p></p>
-</div> -->

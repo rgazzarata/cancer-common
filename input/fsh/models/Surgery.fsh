@@ -1,7 +1,7 @@
 Logical: Surgery
 Id: Surgery
 Title: "Surgery"
-Description: "Logical model representing a surgical treatment episode delivered to the patient for cancer management. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet Surgery)."
+Description: "Logical model representing a surgical treatment episode delivered to the patient for cancer management. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet Surgery)."
 Characteristics: #can-be-target
 
 * subject 1..1 CancerPatient "Subject"
@@ -17,5 +17,4 @@ Characteristics: #can-be-target
 * date 1..1 dateTime "Date"
 * date ^definition = "Date when the surgical procedure was performed."
 * bodySite 1..* CodeableConcept "BodySite"
-* bodySite ^definition = "Anatomical site(s) where the surgery was performed.
-"
+* bodySite ^definition = "Anatomical site(s) where the surgery was performed."

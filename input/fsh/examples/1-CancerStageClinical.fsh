@@ -1,4 +1,4 @@
-Instance: CancerStageClinical1-Example
+/* Instance: CancerStageClinical1-Example
 InstanceOf: CancerStage
 Usage: #example
 
@@ -9,6 +9,7 @@ Usage: #example
 * value[+].id = "N0"
 * value[+].id = "M0"
 * type.coding[0].code = #Clinical
-* type.coding[0].display = "Clinical"
+* type.coding[0].display = "Clinical" */
+
 /* To be updated*/
 // * evidenceReference = Reference(Imaging1-Example)

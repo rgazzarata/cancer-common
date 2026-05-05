@@ -14,7 +14,8 @@ class ClinicalCancerProgression {
 }
 
 note left of ClinicalCancerProgression::diseaseStatus
-Choice: Progression | Stable Disease | Partial Remission | Complete Remission | Recurrence
+Choice: Progression | Stable Disease 
+| Partial Remission | Complete Remission | Recurrence
 end note 
 note left of ClinicalCancerProgression::extentType
 extentType: Choice: Local | Loco-regional | Metastatic

@@ -1,7 +1,7 @@
 Logical: ClinicalCancerProgression
 Id: ClinicalCancerProgression
 Title: "ClinicalCancerProgression"
-Description: "Logical model representing the longitudinal evolution of the cancer disease, documenting disease status and extent at a specific point in time. Derived from Cancer_Common_Logical_Model_20260408.xlsx  (sheet ClinicalCancerProgression)."
+Description: "Logical model representing the longitudinal evolution of the cancer disease, documenting disease status and extent at a specific point in time. Derived from Cancer_Common_Logical_Model_20260521.xlsx  (sheet ClinicalCancerProgression)."
 Characteristics: #can-be-target
 
 * obeys ccp-1
@@ -22,10 +22,10 @@ Characteristics: #can-be-target
 * extentType ^comment = "Choice: Local | Loco-regional | Metastatic"
 * locoRegionalSites 0..* CodeableConcept "LocoRegionalSites"
 * locoRegionalSites ^definition = "Sites involved when ExtentType is Loco-regional."
-* locoRegionalSites ^definition = "It must be present if the ExtentType is Loco-regional"
+* locoRegionalSites ^comment = "It must be present if the ExtentType is Loco-regional"
 * metastaticSites 0..* CodeableConcept "MetastaticSites"
 * metastaticSites ^definition = "Sites involved when ExtentType is Metastatic."
-* metastaticSites ^definition = "It must be present if the ExtentType is Metastatic"
+* metastaticSites ^comment = "It must be present if the ExtentType is Metastatic"
 
 Invariant: ccp-1
 Description: "LocoRegionalSites must be present if ExtentType is Loco-regional"

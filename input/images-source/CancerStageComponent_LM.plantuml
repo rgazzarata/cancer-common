@@ -1,0 +1,27 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+
+class CancerStageComponent {
+  code : CodeableConcept [1..1]
+  value : CodeableConcept [1..1]
+}
+
+note right of CancerStageComponent::code
+Identifies the staging component
+being reported.
+
+Examples:
+- "FIGO stage group"
+- "T", "N", "M" (TNM)
+end note
+
+note right of CancerStageComponent::value
+Staging value associated
+with the component.
+
+Examples:
+- "IIIB"
+- "T2", "N0", "M0"
+end note
+@enduml

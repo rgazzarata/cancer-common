@@ -1,7 +1,7 @@
 Logical: LastFollowUp
 Id: LastFollowUp
 Title: "LastFollowUp"
-Description: "Logical model representing the assessment of the patient’s status at a specific follow-up visit, including vital status and evidence of disease. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet LastFollowUp)."
+Description: "Logical model representing the assessment of the patient’s status at a specific follow-up visit, including vital status and evidence of disease. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet LastFollowUp)."
 Characteristics: #can-be-target
 
 * obeys lfu-1
@@ -28,13 +28,21 @@ Invariant: lfu-1
 Description: "EvidenceOfDisease must be present if VitalStatus is Alive; otherwise, it must not be present."
 Expression: "(vitalStatus.coding.where(code = 'Alive').exists()) = evidenceOfDisease.exists()"
 Severity: #error
-
 Invariant: lfu-2
 Description: "CauseOfDeath must be present if VitalStatus is Dead; otherwise, it must not be present."
 Expression: "(vitalStatus.coding.where(code = 'Dead').exists()) = causeOfDeath.exists()"
 Severity: #error
-
 Invariant: lfu-3
 Description: "DeathDate must be present if VitalStatus is Dead; otherwise, it must not be present."
 Expression: "(vitalStatus.coding.where(code = 'Dead').exists()) = deathDate.exists()"
 Severity: #error
+
+Invariant: lfu-4
+Description: "DeathDate must not be present if VitalStatus is Alive."
+Severity: #error
+Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
+Invariant: lfu-4
+Description: "DeathDate must not be present if VitalStatus is Alive."
+Severity: #error
+Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
+

@@ -7,6 +7,7 @@ class ActiveSurveillance [[StructureDefinition-ActiveSurveillance.html]]
 class CancerConditionAtDiagnosis [[StructureDefinition-CancerConditionAtDiagnosis.html]]
 class CancerPatient [[StructureDefinition-CancerPatient.html]]
 class CancerStage [[StructureDefinition-CancerStage.html]]
+class CancerStageComponent [[StructureDefinition-CancerStageComponent.html]]
 class ClinicalCancerProgression [[StructureDefinition-ClinicalCancerProgression.html]]
 class Imaging [[StructureDefinition-Imaging.html]]
 class LastFollowUp [[StructureDefinition-LastFollowUp.html]]
@@ -49,6 +50,7 @@ CancerTreatment-u->CancerConditionAtDiagnosis
 CancerTreatment --> CancerPatient
 CancerConditionAtDiagnosis --> CancerPatient
 CancerStage -u-> CancerConditionAtDiagnosis
+CancerStage --> CancerStageComponent
 CancerStage --> Surgery
 note on link
 onlyIfType=Pathological

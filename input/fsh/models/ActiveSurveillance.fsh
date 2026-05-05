@@ -1,7 +1,7 @@
 Logical: ActiveSurveillance
 Id: ActiveSurveillance
 Title: "Active Surveillance"
-Description: "Logical model representing an active surveillance strategy in which the patient is monitored over time without active treatment, prior to disease progression. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet ActiveSurveillance)."
+Description: "Logical model representing an active surveillance strategy in which the patient is monitored over time without active treatment, prior to disease progression. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet ActiveSurveillance)."
 Characteristics: #can-be-target
 
 * subject 1..1 CancerPatient "Subject"
@@ -14,3 +14,9 @@ Characteristics: #can-be-target
 * endDate 0..1 dateTime "EndDate"
 * endDate ^definition = "End date of the active surveillance period (if concluded)."
 * endDate ^comment = "It might not be available while the active surveillanceis still ongoing; however, an end date must eventually be recorded."
+
+
+Invariant: as-1
+Description: "If endDate is present, it must be greater than or equal to startDate."
+Severity: #error
+Expression: "endDate.empty() or endDate >= startDate"

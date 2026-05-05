@@ -1,17 +1,17 @@
 Logical: CancerStage
 Id: CancerStage
 Title: "CancerStage"
-Description: "Logical model representing the cancer stage at the time of first diagnosis. The stage may be clinical or pathological: the clinical stage is derived from imaging evidence, while the pathological stage, when available, is derived from surgical evidence. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet CancerStage)."
+Description: "Logical model representing the cancer stage at the time of first diagnosis. The stage may be clinical or pathological: the clinical stage is derived from imaging evidence, while the pathological stage, when available, is derived from surgical evidence. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet CancerStage)."
 Characteristics: #can-be-target
 
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"
 * cancerConditionAtDiagnosisReference ^definition = "Reference to the cancer condition at first diagnosis for which the stage is reported."
-* classificationType 1..1 CodeableConcept "ClassificationType"
-* classificationType ^definition = "Staging classification system used (e.g. TNM)."
-* classificationType ^comment = "It represents the classification system to define the stage, such as TNM (Tumour Linphonode Metastasis)."
-* value 1..* Element "Value"
-* value ^definition = "Stage value(s) as defined by the applied staging system (structure depends on the system)."
-* value ^comment = "It represents the stage value. Its datatype and cardinality depend on the specific structure of the staging classification being used. For example, in the case of the TNM classification, three string values are expected: one for T (Tumour), one for N (Nodes), and one for M (Metastasis)."
+* classificationType 0..1 CodeableConcept "ClassificationType"
+* classificationType ^definition = "Staging classification system used when the staging system needs to be explicitly identified (e.g. TNM)."
+* classificationType ^comment = "For TNM, this element should be populated with 'TNM'. For single-value systems, it may be omitted when the system/measure is represented through stageComponent.code."
+* value 1..3 CancerStageComponent "StageComponent"
+* value ^definition = "One or more staging values expressed as (code, value) pairs."
+* value ^comment = "Most staging systems are represented by a single component. TNM is represented by three components, one for each of T, N, and M (codes 'T', 'N', 'M')."
 * type 1..1 CodeableConcept "Type"
 * type ^definition = "It indicates whether the stage instance is of type Clinical or Pathological."
 * type ^comment = "It indicates whether the stage instance is of type Clinical or Pathological. Choice: Clinical | Pathological"
@@ -23,3 +23,28 @@ Characteristics: #can-be-target
 * surgeryReference ^definition = "It shall be present when the stage is of type Pathological and shall not be present when the stage is of type Clinical."
 * imagingReference 0..* Reference(Imaging) "ImagingReference"
 * imagingReference ^definition = "It shall be present when the stage is of type Clinical and shall not be present when the stage is of type Pathological." */
+
+Invariant: cs-ev-w1
+Description: "If type is Clinical, imaging evidence should be provided."
+Severity: #warning
+Expression: "type.text = 'Clinical' implies evidenceReferenceImaging.exists()"
+Invariant: cs-ev-w2
+Description: "If type is Pathological, surgical evidence should be provided."
+Severity: #warning
+Expression: "type.text = 'Pathological' implies evidenceReferenceSurgery.exists()"
+Invariant: cs-ev-e1
+Description: "If type is Clinical, surgical evidence must not be provided."
+Severity: #error
+Expression: "type.text = 'Clinical' implies evidenceReferenceSurgery.empty()"
+Invariant: cs-ev-e2
+Description: "If type is Pathological, imaging evidence must not be provided."
+Severity: #error
+Expression: "type.text = 'Pathological' implies evidenceReference"
+Invariant: cs-tnm-1
+Description: "If classificationType is TNM, more than one value is expected."
+Severity: #warning
+Expression: "classificationType.text = 'TNM' implies value.count() = 3"
+Invariant: cs-nontnm-1
+Description: "For non-TNM staging systems, a single value is typically expected."
+Severity: #warning
+Expression: "classificationType.text != 'TNM' implies value.count() = 1"
