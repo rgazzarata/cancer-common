@@ -1,7 +1,7 @@
 Logical: Imaging
 Id: Imaging
 Title: "Imaging"
-Description: "Imaging logical model from Cancer_Common_Logical_Model_20260408.xlsx (sheet Imaging)."
+Description: "Logical model representing a diagnostic imaging procedure performed to define the diagnosis and the clinical stage. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet Imaging)."
 Characteristics: #can-be-target
 
 * type 1..1 CodeableConcept "Type"

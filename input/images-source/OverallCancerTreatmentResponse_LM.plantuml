@@ -5,12 +5,11 @@ skinparam classAttributeIconSize 0
 class OverallCancerTreatmentResponse {
   cancerConditionAtDiagnosisReference : Reference(CancerConditionAtDiagnosis) [1..1]
   clinicalCancerProgressionReference : Reference(ClinicalCancerProgression) [0..1]
-  treatmentResponseType : CodeableConcept [1..1]
+  treatmentResponseType : codeableConcept [1..1]
   date : dateTime [1..1]
 }
 
-note bottom of OverallCancerTreatmentResponse
-- clinicalCancerProgressionReference: It is not only required at the time of diagnosis; it must be provided in the event of ClinicalCancerProgression.
-- treatmentResponseType: Choice: Progression | Stable Disease | Partial Remission | Complete Remission
+note left of OverallCancerTreatmentResponse::treatmentResponseType
+Choice: Progression | Stable Disease | Partial Remission | Complete Remission
 end note
 @enduml

@@ -1,7 +1,7 @@
 Logical: CancerPatient
 Id: CancerPatient
 Title: "Cancer Patient"
-Description: "Cancer patient logical model from Cancer_Common_Logical_Model_20260408.xlsx (sheet CancerPatient)."
+Description: "Logical model describing the patient affected by cancer, acting as the central subject for diagnosis, treatments, disease evolution and follow-up. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet CancerPatient)."
 Characteristics: #can-be-target
 
 * birthDate 1..1 dateTime "BirthDate"

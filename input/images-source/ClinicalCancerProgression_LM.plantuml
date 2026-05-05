@@ -4,19 +4,19 @@ skinparam classAttributeIconSize 0
 
 class ClinicalCancerProgression {
   cancerConditionAtDiagnosisReference : Reference(CancerConditionAtDiagnosis) [1..1]
-  diseaseStatus : CodeableConcept [1..1]
-  tumourGradeSystem : CodeableConcept [0..1]
+  diseaseStatus : codeableConcept [1..1]
+  tumourGradeSystem : codeableConcept [0..1]
   tumourGradeValue : string [0..1]
   assertedDate : dateTime [1..1]
-  extentType : CodeableConcept [0..1]
-  locoRegionalSites : CodeableConcept [0..*]
-  metastaticSites : CodeableConcept [0..*]
+  extentType : codeableConcept [0..1]
+  locoRegionalSites : codeableConcept [0..*]
+  metastaticSites : codeableConcept [0..*]
 }
 
-note bottom of ClinicalCancerProgression
-- diseaseStatus: Choice: Progression | Stable Disease | Partial Remission | Complete Remission | Recurrence
-- extentType: Choice: Local | Loco-regional | Metastatic
-- locoRegionalSites: It must be present if the ExtentType is Loco-regional
-- metastaticSites: It must be present if the ExtentType is Metastatic
+note left of ClinicalCancerProgression::diseaseStatus
+Choice: Progression | Stable Disease | Partial Remission | Complete Remission | Recurrence
+end note 
+note left of ClinicalCancerProgression::extentType
+extentType: Choice: Local | Loco-regional | Metastatic
 end note
 @enduml

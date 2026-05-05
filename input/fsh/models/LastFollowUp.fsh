@@ -1,7 +1,7 @@
 Logical: LastFollowUp
 Id: LastFollowUp
 Title: "LastFollowUp"
-Description: "LastFollowUp logical model from Cancer_Common_Logical_Model_20260408.xlsx (sheet LastFollowUp)."
+Description: "Logical model representing the assessment of the patient’s status at a specific follow-up visit, including vital status and evidence of disease. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet LastFollowUp)."
 Characteristics: #can-be-target
 
 * obeys lfu-1

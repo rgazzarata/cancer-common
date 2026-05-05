@@ -54,11 +54,11 @@ Although continued follow up is generally intended, **loss to follow up** may oc
 
 ## Illustrative Example of a Typical Cancer Journey
 
-The following section presents an illustrative example of a Typical Cancer Journey, intended to show how the [European Cancer Common Conceptual Model](https://build.fhir.org/ig/hl7-eu/cancer-common/conceptualmodel.html) can be applied to represent the evolution of a cancer condition over time.
+The following section presents an illustrative example of a Typical Cancer Journey, intended to show how the [European Cancer Common Conceptual Model](conceptualmodel.html) can be applied to represent the evolution of a cancer condition over time.
 
 The example is provided for explanatory purposes only and does not represent a clinical guideline or a recommended care pathway. Its goal is to make the conceptual model more concrete by illustrating how its core concepts and relationships can be used to describe a longitudinal cancer journey, from diagnosis through treatment, follow up, disease evolution, and final outcomes.
 
-This page focuses on the conceptual level, showing how the cancer journey can be described using the entities and relationships defined in the conceptual model, together with schematic representations of the main steps and their temporal ordering. A more detailed view of how data are instantiated and evolve over time is provided in dedicated [Data Evolution](https://build.fhir.org/ig/hl7-eu/cancer-common/journey-data-evolution.html) page. The [Logical Model](https://build.fhir.org/ig/hl7-eu/cancer-common/logicalmodels.html) is described in a dedicated section of this Implementation Guide, where a corresponding Data Evolution at the logical level is also presented in greater detail.
+This page focuses on the conceptual level, showing how the cancer journey can be described using the entities and relationships defined in the conceptual model, together with schematic representations of the main steps and their temporal ordering. A more detailed view of how data are instantiated and evolve over time is provided in dedicated [Data Evolution](journey-data-evolution.html) page. The [Logical Model](logicalmodels.html) is described in a dedicated section of this Implementation Guide, where a corresponding Data Evolution at the logical level is also presented in greater detail.
 
 ### The overall journey
 

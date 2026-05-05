@@ -2,11 +2,14 @@
 hide empty members
 skinparam classAttributeIconSize 0
 
-class Patient {
-  birthDate : dateTime [1..1]
-  sexAtBirth : CodeableConcept [1..1]
-  sexAtDiagnosis : CodeableConcept [0..1]
-  comorbiditiesAtCancerDiagnosis : CodeableConcept [0..*]
+class CancerPatient {
+  birthDate : dateTime [1..1] 
+  sexAtBirth : codeableConcept [1..1] 
+  sexAtDiagnosis : codeableConcept [0..1]
+  comorbiditiesAtCancerDiagnosis : codeableConcept [0..*]
 }
 
+note left of CancerPatient::sexAtBirth
+Choice: Male | Female | Unknown | Other
+end note
 @enduml

@@ -1,7 +1,7 @@
 Logical: ActiveSurveillance
 Id: ActiveSurveillance
 Title: "Active Surveillance"
-Description: "Active Surveillance logical model from Cancer_Common_Logical_Model_20260408.xlsx (sheet ActiveSurveillance)."
+Description: "Logical model representing an active surveillance strategy in which the patient is monitored over time without active treatment, prior to disease progression. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet ActiveSurveillance)."
 Characteristics: #can-be-target
 
 * subject 1..1 CancerPatient "Subject"

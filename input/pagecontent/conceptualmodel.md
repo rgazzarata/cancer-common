@@ -7,7 +7,7 @@ The purpose of the conceptual model is to establish a **common semantic backbone
 
 In its initial scope, the conceptual model focuses on **adult patients with solid tumours**, considering **one cancer condition at a time**, in order to limit modelling complexity and ensure feasibility in early iterations.
 
-This conceptual backbone is refined through the [Logical Model](https://build.fhir.org/ig/hl7-eu/cancer-common/logicalmodels.html) and, within this Implementation Guide, explicitly mapped to both [HL7 FHIR](https://build.fhir.org/ig/hl7-eu/cancer-common/fhirmodelmap.html) and [OMOP](https://build.fhir.org/ig/hl7-eu/cancer-common/omopmodelmap.html), demonstrating how a single shared model can support interoperable representations across different technical ecosystems.
+This conceptual backbone is refined through the [Logical Model](logicalmodels.html) and, within this Implementation Guide, explicitly mapped to both [HL7 FHIR](fhirmodelmap.html) and [OMOP](omopmodelmap.html), demonstrating how a single shared model can support interoperable representations across different technical ecosystems.
 
 ### Overview
 
@@ -138,9 +138,9 @@ Events and documents are included to reflect real world EHR artefacts and to sup
 
 The conceptual representation is also organised around the notion of a typical cancer journey. In addition to defining concepts and relationships, the model captures how cancer related information unfolds over time, from diagnosis through treatment, response evaluation, disease progression, and follow up. 
 
-To support understanding and validation of the model, a reference typical [cancer patient journey](https://build.fhir.org/ig/hl7-eu/cancer-common/journey.html) has been defined, together with an [illustrative example](https://build.fhir.org/ig/hl7-eu/cancer-common/journey-data-evolution.html) showing how the conceptual entities can be instantiated and populated over time. This example is intended to make the model easier to understand for clinicians, researchers, and implementers, and to demonstrate its applicability in real world scenarios.
+To support understanding and validation of the model, a reference typical [cancer patient journey](journey.html) has been defined, together with an [illustrative example](journey-data-evolution.html) showing how the conceptual entities can be instantiated and populated over time. This example is intended to make the model easier to understand for clinicians, researchers, and implementers, and to demonstrate its applicability in real world scenarios.
 
-A detailed description of the typical [cancer patient journey](https://build.fhir.org/ig/hl7-eu/cancer-common/journey.html) and an [example](https://build.fhir.org/ig/hl7-eu/cancer-common/journey-data-evolution.html) of model population are provided in the dedicated pages, which complement the conceptual and logical representations presented in this Implementation Guide.
+A detailed description of the typical [cancer patient journey](journey.html) and an [example](journey-data-evolution.html) of model population are provided in the dedicated pages, which complement the conceptual and logical representations presented in this Implementation Guide.
 
 ### Modelling assumptions and design considerations
 
@@ -177,14 +177,14 @@ These topics require dedicated scoping and discussion and will be addressed in f
 ### From Conceptual Model to Logical Model and Implementations
 
 The conceptual model does not stand alone.
-Together with the [Logical Model](https://build.fhir.org/ig/hl7-eu/cancer-common/logicalmodels.html), it forms a shared backbone that supports consistent and systematic mappings across standards.
+Together with the [Logical Model](logicalmodels.html), it forms a shared backbone that supports consistent and systematic mappings across standards.
 
 Within this Implementation Guide:
-*	a detailed definition of all concepts and attributes is provided in the [Glossary](https://build.fhir.org/ig/hl7-eu/cancer-common/glossary.html) page;
-*	the [cancer patient journey](https://build.fhir.org/ig/hl7-eu/cancer-common/journey.html) page describes a reference cancer journey used to guide and validate the conceptual model.
-*	the [example of model population](https://build.fhir.org/ig/hl7-eu/cancer-common/journey-data-evolution.html) page provides an illustrative example of how the conceptual and logical models can be instantiated over time.
-*	the [Logical Model](https://build.fhir.org/ig/hl7-eu/cancer-common/logicalmodels.html) refines the concepts introduced here by defining entities, attributes, relationships, and cardinalities;
-*	mappings of the shared backbone to [HL7 FHIR](https://build.fhir.org/ig/hl7-eu/cancer-common/fhirmodelmap.html) are documented;
+*	a detailed definition of all concepts and attributes is provided in the [Glossary](glossary.html) page;
+*	the [cancer patient journey](journey.html) page describes a reference cancer journey used to guide and validate the conceptual model.
+*	the [example of model population](journey-data-evolution.html) page provides an illustrative example of how the conceptual and logical models can be instantiated over time.
+*	the [Logical Model](logicalmodels.html) refines the concepts introduced here by defining entities, attributes, relationships, and cardinalities;
+*	mappings of the shared backbone to [HL7 FHIR](fhirmodelmap.html) are documented;
 *	mappings of the same backbone to **OMOP** are documented to support research and data reuse.
 
 By presenting these mappings within a single Implementation Guide, ECCDM demonstrates how a common semantic foundation can support interoperability across different technical ecosystems without redefining the underlying meaning of the data.

@@ -1,7 +1,7 @@
 Logical: CancerStage
 Id: CancerStage
 Title: "CancerStage"
-Description: "CancerStage logical model from Cancer_Common_Logical_Model_20260408.xlsx (sheet CancerStage)."
+Description: "Logical model representing the cancer stage at the time of first diagnosis. The stage may be clinical or pathological: the clinical stage is derived from imaging evidence, while the pathological stage, when available, is derived from surgical evidence. Derived from Cancer_Common_Logical_Model_20260408.xlsx (sheet CancerStage)."
 Characteristics: #can-be-target
 
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"

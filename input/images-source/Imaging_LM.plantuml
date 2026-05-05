@@ -3,8 +3,8 @@ hide empty members
 skinparam classAttributeIconSize 0
 
 class Imaging {
-  type : CodeableConcept [1..1]
-  bodySite : CodeableConcept [1..*]
+  type : codeableConcept [1..1]
+  bodySite : codeableConcept [1..*]
 }
 
 @enduml

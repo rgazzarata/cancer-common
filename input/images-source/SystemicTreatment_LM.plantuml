@@ -6,12 +6,18 @@ class SystemicTreatment {
   subject : CancerPatient [1..1]
   cancerConditionAtDiagnosisReference : Reference(CancerConditionAtDiagnosis) [1..1]
   clinicalCancerProgresionReference : Reference(ClinicalCancerProgression) [0..1]
-  intent : CodeableConcept [1..1]
-  type : CodeableConcept [1..1]
+  intent : codeableConcept [1..1]
+  type : codeableConcept [1..1]
   startDate : dateTime [1..1]
   endDate : dateTime [0..1]
   ongoing : boolean [0..1]
-  setting : CodeableConcept [0..1]
+  setting : codeableConcept [0..1]
 }
 
+note left of SystemicTreatment::intent
+Choice: Definitive | Palliative 
+end note
+note left of SystemicTreatment::setting
+Choice: Alone |  Preoperative/Neoadjuvant | Postoperative/Adjuvant | Concomitant
+end note
 @enduml

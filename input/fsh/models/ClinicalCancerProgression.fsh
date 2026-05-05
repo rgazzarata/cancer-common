@@ -1,7 +1,7 @@
 Logical: ClinicalCancerProgression
 Id: ClinicalCancerProgression
 Title: "ClinicalCancerProgression"
-Description: "ClinicalCancerProgression logical model from Cancer_Common_Logical_Model_20260408.xlsx  (sheet ClinicalCancerProgression)."
+Description: "Logical model representing the longitudinal evolution of the cancer disease, documenting disease status and extent at a specific point in time. Derived from Cancer_Common_Logical_Model_20260408.xlsx  (sheet ClinicalCancerProgression)."
 Characteristics: #can-be-target
 
 * obeys ccp-1
