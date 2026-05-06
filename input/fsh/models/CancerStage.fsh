@@ -47,7 +47,7 @@ Description: "If type is Pathological, imaging evidence must not be provided."
 Severity: #error
 Expression: "type.text = 'Pathological' implies evidenceReference"
 Invariant: cs-tnm-1
-Description: "If classificationType is TNM, more than one value is expected."
+Description: "If classificationType is TNM, 3 values is expected."
 Severity: #warning
 Expression: "classificationType.text = 'TNM' implies value.count() = 3"
 Invariant: cs-nontnm-1
