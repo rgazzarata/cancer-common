@@ -7,7 +7,7 @@ Characteristics: #can-be-target
 * obeys cs-ev-w1
 * obeys cs-ev-w2
 * obeys cs-ev-e1
-* obeys cs-ev-e1
+* obeys cs-ev-e2
 * obeys cs-tnm-1
 * obeys cs-nontnm-1
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"
