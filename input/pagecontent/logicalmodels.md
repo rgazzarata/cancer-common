@@ -60,8 +60,6 @@ FHIR Logical Model: [StructureDefinition-CancerConditionAtDiagnosis.html](Struct
 
 #### CancerStage
 
-#### CancerStage
-
 Represents the stage at first diagnosis and can be clinical or pathological.  
 A clinical stage is always expected and is defined based on imaging evidence. A pathological stage may additionally be recorded, when available, and is defined based on surgical evidence.
 
@@ -110,29 +108,6 @@ For example:
 </div>
 
 FHIR Logical Model: [StructureDefinition-CancerStage.html](StructureDefinition-CancerStage.html)
-
-#### CancerStageComponent
-
-Represents a single component of the cancer stage, expressed as a pair consisting of a **code** and an associated **value**. This logical model is used to consistently represent staging information across different classification systems.
-
-In most staging systems, only one CancerStageComponent is required to capture the stage value. In more complex systems, such as **TNM**, multiple components are used to represent the full stage:
-* one component for **T** (tumour),
-* one component for **N** (lymph nodes),
-* and one component for **M** (metastasis).
-
-Each CancerStageComponent captures which staging element is being reported and its corresponding value, enabling a flexible and extensible representation of cancer staging while preserving full computability and traceability.
-
-<div style="text-align:center;">
-  <p></p>
-  <figure>
-    {% include CancerStageComponent_LM.svg %}
-    <figcaption><strong>Figure 4: CancerStageComponent logical model</strong></figcaption>
-  </figure>
-  <p></p>
-</div>
-
-FHIR Logical Model: [StructureDefinition-CancerStageComponent.html](StructureDefinition-CancerStageComponent.html)
-
 
 #### Imaging
 
