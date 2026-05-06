@@ -60,27 +60,45 @@ FHIR Logical Model: [StructureDefinition-CancerConditionAtDiagnosis.html](Struct
 
 #### CancerStage
 
-Represents the stage at first diagnosis and can be clinical or pathological. A clinical stage is always expected and is defined based on imaging evidence. A pathological stage may additionally be recorded, when available, and is defined based on surgical evidence.
+#### CancerStage
 
-Different staging or grading classification systems are used in oncology, depending on the tumour type and clinical context.
-At the logical model level, this guide does not restrict the set of supported classification systems. Instead, the applied system is indicated through the classificationType, while the corresponding staging values are expressed using one or more CancerStageComponent instances.
+Represents the stage at first diagnosis and can be clinical or pathological.  
+A clinical stage is always expected and is defined based on imaging evidence. A pathological stage may additionally be recorded, when available, and is defined based on surgical evidence.
+
+Different staging or grading classification systems are used in oncology, depending on the tumour type and clinical context.  
+At the logical model level, this guide does not restrict the set of supported classification systems.
+
+The **staging system may be represented in two different ways**, depending on whether the classification is **composite** or **single‑value** in nature.
+
+For **TNM**, and other composite staging systems used for most solid tumours, the staging framework is explicitly indicated using the `classificationType` element, and the stage is represented through
+multiple `stageValue` elements (e.g. T, N, and M).
+
+For **other staging or grading systems**, which are typically represented by a single value (e.g. FIGO stage, Gleason / ISUP Grade Group), the classification is **implicitly expressed** through
+the value of `stageValue.code`, and the `classificationType` element is typically **not populated**.
 
 Examples of commonly used classification systems include:
-* **TNM** staging, widely adopted for most solid tumours and represented through multiple components (T, N, M);
+* **TNM**, widely adopted for most solid tumours;
 * **Gleason / ISUP Grade Group**, used for prostate cancer grading;
 * **FIGO** staging systems, used for gynaecological malignancies;
-* other tumour‑specific staging or grading systems adopted in clinical practice.
+* other tumour‑specific staging or grading systems used in clinical practice.
 
 These examples are provided for illustration purposes and are not intended to represent an exhaustive or prescriptive list.
 
-The stage value itself is not represented as a single field but through one or more **CancerStageComponent** instances. This approach supports both simple staging systems, where a single stage value is sufficient, and composite systems such as **TNM**, where the overall stage is expressed through multiple components.
+The stage information itself is **not represented as a single atomic field**.  
+Instead, it is captured through one or more **stageValue** elements, each expressed as a **code / value pair**:
+
+* `stageValue.code` identifies *which staging element or classification is being reported*  
+  (e.g. T category, N category, M category, FIGO stage group, Gleason grade group);
+* `stageValue.value` captures *the corresponding value*  
+  (e.g. T2, N1, M0, IIIB, Grade Group 4).
+
+This approach supports both:
+* **single‑value staging systems**, where a single `stageValue` is sufficient;
+* **composite staging systems**, such as **TNM**, where multiple `stageValue` elements are used.
 
 For example:
-- in single‑value staging systems (e.g. stage group–based classifications), the stage is represented by a single CancerStageComponent;
-- in the TNM system, the stage is represented by three CancerStageComponent instances, one for each of **T (Tumour)**, **N (Nodes)**, and **M (Metastasis)**.
-
-In the case of TNM, the staging classification system is explicitly indicated in the CancerStage, while the individual components capture the specific values of T, N, and M.
-
+* in a single‑value staging system, such as FIGO or Gleason, the stage is represented by **one** `stageValue`, and `classificationType` is typically omitted;
+* in the TNM system, the stage is represented by **three** `stageValue` elements, corresponding to **T (Tumour)**, **N (Nodes)**, and **M (Metastasis)**, and `classificationType` is populated with *TNM*.
 
 <div style="text-align:center;">
   <p></p>
@@ -124,7 +142,7 @@ Represents diagnostic imaging procedures performed to define the diagnosis and t
   <p></p>
   <figure>
     {% include Imaging_LM.svg %}
-    <figcaption><strong>Figure 5: Imaging logical model</strong></figcaption>
+    <figcaption><strong>Figure 4: Imaging logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -139,7 +157,7 @@ Represents the patient affected by one or more cancer conditionsand acts as the 
   <p></p>
   <figure>
     {% include Patient_LM.svg %}
-    <figcaption><strong>Figure 6: CancerPatient logical model</strong></figcaption>
+    <figcaption><strong>Figure 5: CancerPatient logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -154,7 +172,7 @@ Represents a surgical treatment episode delivered to the patient, either as part
   <p></p>
   <figure>
     {% include Surgery_LM.svg %}
-    <figcaption><strong>Figure 7: Surgery logical model</strong></figcaption>
+    <figcaption><strong>Figure 6: Surgery logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -169,7 +187,7 @@ Represents a management strategy in which the patient is monitored over time wit
   <p></p>
   <figure>
     {% include ActiveSurveillance_LM.svg %}
-    <figcaption><strong>Figure 8: ActiveSurveillance logical model</strong></figcaption>
+    <figcaption><strong>Figure 7: ActiveSurveillance logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -184,7 +202,7 @@ Represents a radiotherapy treatment course delivered to the patient, including i
   <p></p>
   <figure>
     {% include Radiotherapy_LM.svg %}
-    <figcaption><strong>Figure 9: Radiotherapy logical model</strong></figcaption>
+    <figcaption><strong>Figure 8: Radiotherapy logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -199,7 +217,7 @@ Represents a systemic anti‑cancer treatment episode (e.g. chemotherapy, immuno
   <p></p>
   <figure>
     {% include SystemicTreatment_LM.svg %}
-    <figcaption><strong>Figure 10: SystemicTreatment logical model</strong></figcaption>
+    <figcaption><strong>Figure 9: SystemicTreatment logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -214,7 +232,7 @@ Represents the overall assessment of how the cancer condition has responded to o
   <p></p>
   <figure>
     {% include OverallCancerTreatmentResponse_LM.svg %}
-    <figcaption><strong>Figure 11: OverallCancerTreatmentResponse logical model</strong></figcaption>
+    <figcaption><strong>Figure 10: OverallCancerTreatmentResponse logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -229,7 +247,7 @@ Represents the assessment of the patient’s status at a specific follow‑up vi
   <p></p>
   <figure>
     {% include LastFollowUp_LM.svg %}
-    <figcaption><strong>Figure 12: LastFollowUp logical model</strong></figcaption>
+    <figcaption><strong>Figure 11: LastFollowUp logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>
@@ -244,7 +262,7 @@ Represents the evolution of the disease over time, documenting changes in diseas
   <p></p>
   <figure>
     {% include ClinicalCancerProgression_LM.svg %}
-    <figcaption><strong>Figure 13: ClinicalCancerProgression logical model</strong></figcaption>
+    <figcaption><strong>Figure 12: ClinicalCancerProgression logical model</strong></figcaption>
   </figure>
   <p></p>
 </div>

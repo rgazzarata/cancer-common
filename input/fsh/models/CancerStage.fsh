@@ -15,9 +15,15 @@ Characteristics: #can-be-target
 * classificationType 0..1 CodeableConcept "ClassificationType"
 * classificationType ^definition = "Staging classification system used when the staging system needs to be explicitly identified (e.g. TNM)."
 * classificationType ^comment = "For TNM, this element should be populated with 'TNM'. For single-value systems, it may be omitted when the system/measure is represented through stageComponent.code."
-* value 1..3 CancerStageComponent "StageComponent"
-* value ^definition = "One or more staging values expressed as (code, value) pairs."
-* value ^comment = "Most staging systems are represented by a single component. TNM is represented by three components, one for each of T, N, and M (codes 'T', 'N', 'M')."
+* stage 1..* BackboneElement "StageValue"
+* stage ^definition = "One or more staging values expressed as (code, value) pairs."
+* stage ^comment = "Most staging systems are represented by a single component. TNM is represented by three components, one for each of T, N, and M (codes 'T', 'N', 'M')."
+* stage.code 1..1 CodeableConcept "Stage element code"
+* stage.code ^definition = "Identifies which staging element is being reported (e.g. T category, N category, M category, stage group)."
+* stage ^comment = "For single-value staging systems, this represents the staging system/measure being used (e.g. 'FIGO stage group'). For TNM, expected codes include 'T', 'N', and 'M'."
+* stage.value 1..1 CodeableConcept "Stage element value"
+* stage.value ^definition = "Value associated with the reported staging element (e.g. T2, N1, M0; or a stage group value)."
+* stage ^comment = "For TNM, this carries the component value (e.g. T2, N0, M0). For single-value systems, this carries the stage group/value (e.g. IIIB)."
 * type 1..1 CodeableConcept "Type"
 * type ^definition = "It indicates whether the stage instance is of type Clinical or Pathological."
 * type ^comment = "It indicates whether the stage instance is of type Clinical or Pathological. Choice: Clinical | Pathological"
@@ -45,11 +51,11 @@ Expression: "type.text = 'Clinical' implies evidenceReferenceSurgery.empty()"
 Invariant: cs-ev-e2
 Description: "If type is Pathological, imaging evidence must not be provided."
 Severity: #error
-Expression: "type.text = 'Pathological' implies evidenceReference"
+Expression: "type.text = 'Pathological' implies evidenceReference.empty()"
 Invariant: cs-tnm-1
 Description: "If classificationType is TNM, 3 values is expected."
 Severity: #warning
-Expression: "classificationType.text = 'TNM' implies value.count() = 3"
+Expression: "classificationType.text = 'TNM' implies value.count() >= 3"
 Invariant: cs-nontnm-1
 Description: "For non-TNM staging systems, a single value is typically expected."
 Severity: #warning

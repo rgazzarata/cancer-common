@@ -11,6 +11,8 @@ Readers are therefore expected to be familiar with those pages before consulting
 
 Compared to the conceptual Data Evolution example, this logical example shows a **more complete population of attributes**, including illustrative terminology codes (e.g. SNOMED CT, ICD-O-3, ICD-10) and additional fields not shown in the conceptual narrative. These codes are provided **for demonstration purposes only**, to illustrate how the logical model can be populated and validated.
 
+In particular, **terminology bindings shown in this page should not be interpreted as mandatory or prescriptive**. Implementations may adopt different coding systems according to local, national, or project‑specific requirements.
+
 **This page shows concrete examples of logical model instances**, highlighting:
 * which logical entities are instantiated at each step;
 * how multiple instances of the same entity type coexist over time;
@@ -23,7 +25,19 @@ For ease of consultation and reuse, especially for readers less familiar with FH
 ### Diagnosis + First Treatment (Date 0 - 3)
 This section instantiates the logical entities required to represent diagnosis and the initial treatment phase. The example includes instances of CancerPatient, CancerConditionAtDiagnosis, Imaging, CancerStage (clinical and pathological), Surgery and Radiotherapy.
 
-In this logical example, attributes are more fully populated than in the conceptual Data Evolution narrative. For instance, tumour histology and body site are provided using ICD-O-3 codes, and imaging/treatment types are illustrated with terminology codes where available.
+In this logical example, attributes are populated in greater detail than in the conceptual Data Evolution narrative. For instance, tumour histology and primary site are represented using ICD‑O‑3 codes, and imaging and treatment types are illustrated using SNOMED CT codes.
+
+These coded values are provided for demonstration purposes, to show how the logical model can be concretely populated, and do not represent mandatory bindings.
+
+For **CancerStage**, the staging assessment is represented using the `stageValue` element, expressed as a code / value pair. In this example, TNM staging is used and, accordingly, the stage is represented through multiple `stageValue` entries corresponding to T, N, and M,
+while `classificationType` is populated to explicitly indicate the TNM framework.
+
+For the purpose of this example, `classificationType` is populated using its `text` element only. Staging values are represented using the `text` field of `stageValue.code` and `stageValue.value` (e.g. T category / T2, N category / N1, M category / M0). This choice reflects the fact that defining complete and context‑specific terminology bindings for staging values (especially for TNM) is non‑trivial and out of scope for this guide.
+
+In real implementations, `classificationType`, `stageValue.code` and `stageValue.value` are expected to be populated using appropriate coded representations, according to the terminology policies adopted in a given national or project‑specific context.
+
+This section therefore illustrates how the logical model can represent both simple and composite staging systems, while preserving explicit semantics, traceability to clinical evidence, and longitudinal consistency.
+
 
 <div style="text-align:center;">
   <p></p>
