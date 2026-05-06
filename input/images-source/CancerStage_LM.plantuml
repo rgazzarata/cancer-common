@@ -15,7 +15,7 @@ Staging classification system (e.g. TNM).
 Required for TNM.
 Optional for single-value staging systems.
 end note
-note left of CancerStage::value
+note left of CancerStage::stage
 One or more staging components
 expressed as (code, value) pairs.
 - Single-value systems: 1 component

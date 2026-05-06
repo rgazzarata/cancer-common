@@ -70,11 +70,11 @@ At the logical model level, this guide does not restrict the set of supported cl
 
 The **staging system may be represented in two different ways**, depending on whether the classification is **composite** or **single‑value** in nature.
 
-For **TNM**, and other composite staging systems used for most solid tumours, the staging framework is explicitly indicated using the `classificationType` element, and the stage is represented through
-multiple `stageValue` elements (e.g. T, N, and M).
+For **TNM**, and other composite staging systems used for most solid tumours, the staging framework is explicitly indicated using the *classificationType* element, and the stage is represented through
+multiple *stageValue* elements (e.g. T, N, and M).
 
 For **other staging or grading systems**, which are typically represented by a single value (e.g. FIGO stage, Gleason / ISUP Grade Group), the classification is **implicitly expressed** through
-the value of `stageValue.code`, and the `classificationType` element is typically **not populated**.
+the value of *stageValue.code*, and the *classificationType* element is typically **not populated**.
 
 Examples of commonly used classification systems include:
 * **TNM**, widely adopted for most solid tumours;
@@ -87,18 +87,18 @@ These examples are provided for illustration purposes and are not intended to re
 The stage information itself is **not represented as a single atomic field**.  
 Instead, it is captured through one or more **stageValue** elements, each expressed as a **code / value pair**:
 
-* `stageValue.code` identifies *which staging element or classification is being reported*  
+* *stageValue.code* identifies *which staging element or classification is being reported*  
   (e.g. T category, N category, M category, FIGO stage group, Gleason grade group);
-* `stageValue.value` captures *the corresponding value*  
+* *stageValue.value* captures *the corresponding value*  
   (e.g. T2, N1, M0, IIIB, Grade Group 4).
 
 This approach supports both:
-* **single‑value staging systems**, where a single `stageValue` is sufficient;
-* **composite staging systems**, such as **TNM**, where multiple `stageValue` elements are used.
+* **single‑value staging systems**, where a single *stageValue* is sufficient;
+* **composite staging systems**, such as **TNM**, where multiple *stageValue* elements are used.
 
 For example:
-* in a single‑value staging system, such as FIGO or Gleason, the stage is represented by **one** `stageValue`, and `classificationType` is typically omitted;
-* in the TNM system, the stage is represented by **three** `stageValue` elements, corresponding to **T (Tumour)**, **N (Nodes)**, and **M (Metastasis)**, and `classificationType` is populated with *TNM*.
+* in a single‑value staging system, such as FIGO or Gleason, the stage is represented by **one** *stageValue*, and *classificationType* is typically omitted;
+* in the TNM system, the stage is represented by **three** *stageValue* elements, corresponding to **T (Tumour)**, **N (Nodes)**, and **M (Metastasis)**, and *classificationType* is populated with *TNM*.
 
 <div style="text-align:center;">
   <p></p>
