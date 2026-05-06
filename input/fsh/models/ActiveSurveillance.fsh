@@ -4,6 +4,7 @@ Title: "Active Surveillance"
 Description: "Logical model representing an active surveillance strategy in which the patient is monitored over time without active treatment, prior to disease progression. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet ActiveSurveillance)."
 Characteristics: #can-be-target
 
+* obeys as-1
 * subject 1..1 CancerPatient "Subject"
 * subject ^definition = "Reference to the patient (subject) under active surveillance."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"

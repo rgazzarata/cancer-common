@@ -4,6 +4,8 @@ Title: "SystemicTreatment"
 Description: "Logical model representing a systemic anti-cancer treatment episode delivered to the patient, either at diagnosis or following disease progression. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet SystemicTreatment)."
 Characteristics: #can-be-target
 
+* obeys st-1
+* obeys st-2
 * subject 1..1 CancerPatient "Subject"
 * subject ^definition = "Reference to the patient (subject) receiving systemic treatment."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerConditionAtDiagnosisReference"

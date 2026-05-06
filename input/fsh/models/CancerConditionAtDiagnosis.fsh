@@ -1,6 +1,6 @@
 Logical: CancerConditionAtDiagnosis
 Id: CancerConditionAtDiagnosis
-Title: "CancerCondition (AtDiagnosis)"
+Title: "CancerConditionAtDiagnosis"
 Description: "Logical model representing the cancer condition at first diagnosis, capturing initial tumour characteristics and the diagnostic context that initiates the cancer journey. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet CancerConditionAtDiagnosis)."
 Characteristics: #can-be-target
 
