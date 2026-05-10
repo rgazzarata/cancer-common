@@ -1,0 +1,32 @@
+@startuml
+top to bottom direction
+hide methods
+skinparam classAttributeIconSize 0
+
+class "OverallCancerTreatmentResponse2-Example" as OverallCancerTreatmentResponse2 [[Binary-OverallCancerTreatmentResponse2-Example.html]] {
+  TreatmentResponseType: Partial Remission
+  Date: 2020-01-02
+}
+
+class "ClinicalCancerProgression5-Example" as ClinicalCancerProgression5 [[Binary-ClinicalCancerProgression5-Example.html]] {
+  DiseaseStatus: Partial Remission
+  AssertedDate: 2020-01-02
+  ExtentType: Loco-regional
+  LocoRegionalSites: Head, face, and neck (including supraclavicular)
+}
+
+class "LastFollowUp5-Example" as LastFollowUp5 [[Binary-LastFollowUp5-Example.html]] {
+  VitalStatus: Alive
+  EvidenceOfDisease: True
+  Date: 2020-01-02
+}
+
+class "CancerConditionAtDiagnosis1-Example" as CancerConditionAtDiagnosis1 [[Binary-CancerConditionAtDiagnosis1-Example.html]] {}
+class "CancerPatient1-Example" as CancerPatient1 [[Binary-CancerPatient1-Example.html]] {}
+class "ClinicalCancerProgression4-Example" as ClinicalCancerProgression4 [[Binary-ClinicalCancerProgression4-Example.html]] {}
+
+OverallCancerTreatmentResponse2 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+OverallCancerTreatmentResponse2 --> ClinicalCancerProgression4 : ClinicalCancerProgression
+ClinicalCancerProgression5 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+LastFollowUp5 --> CancerPatient1 : subject
+@enduml

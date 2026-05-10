@@ -27,19 +27,19 @@ Characteristics: #can-be-target
 
 Invariant: lfu-1
 Description: "EvidenceOfDisease must be present if VitalStatus is Alive; otherwise, it must not be present."
-Expression: "(vitalStatus.coding.where(code = 'Alive').exists()) = evidenceOfDisease.exists()"
+Expression: "(vitalStatus.where(text = 'Alive').exists()) = evidenceOfDisease.exists()"
 Severity: #error
 Invariant: lfu-2
 Description: "CauseOfDeath must be present if VitalStatus is Dead; otherwise, it must not be present."
-Expression: "(vitalStatus.coding.where(code = 'Dead').exists()) = causeOfDeath.exists()"
+Expression: "(vitalStatus.where(text = 'Dead').exists()) = causeOfDeath.exists()"
 Severity: #error
 Invariant: lfu-3
 Description: "DeathDate must be present if VitalStatus is Dead; otherwise, it must not be present."
-Expression: "(vitalStatus.coding.where(code = 'Dead').exists()) = deathDate.exists()"
+Expression: "(vitalStatus.where(text = 'Dead').exists()) = deathDate.exists()"
 Severity: #error
 Invariant: lfu-4
 Description: "DeathDate must not be present if VitalStatus is Alive."
 Severity: #error
-Expression: "vitalStatus.where(coding.code = 'Alive').exists() implies deathDate.empty()"
+Expression: "vitalStatus.where(text = 'Alive').exists() implies deathDate.empty()"
 
 

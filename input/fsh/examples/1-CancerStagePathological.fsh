@@ -1,15 +1,20 @@
-/* Instance: CancerStagePathological1-Example
+Instance: CancerStagePathological1-Example
 InstanceOf: CancerStage
 Usage: #example
 
 * cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis1-Example)
-* classificationType.coding[0].code = #TNM
-* classificationType.coding[0].display = "Tumor Linphonode Metastasis"
-* value[+].id = "T2"
-* value[+].id = "N1"
-* value[+].id = "M0"
+* classificationType.text = "TNM"
+// Stage value 1
+* stage[+].code.text = "T category"
+* stage[=].value.text = "T2"
+// Stage value 2
+* stage[+].code.text = "N category"
+* stage[=].value.text = "N1"
+// Stage value 3
+* stage[+].code.text = "M category"
+* stage[=].value.text = "M0"
 * type.coding[0].code = #Pathological
-* type.coding[0].display = "Pathological" */
+* type.coding[0].display = "Pathological"
+* type.text = "Pathological"
 
-/* To be updated*/
-/* * evidenceReference = Reference(Surgery1-Example) */
+* evidenceReferenceSurgery[+] = Surgery1-Example

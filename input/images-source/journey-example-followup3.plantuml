@@ -1,0 +1,24 @@
+@startuml
+top to bottom direction
+hide methods
+skinparam classAttributeIconSize 0
+
+class "ClinicalCancerProgression4-Example" as ClinicalCancerProgression4 [[Binary-ClinicalCancerProgression4-Example.html]] {
+  DiseaseStatus: Recurrence
+  AssertedDate: 2019-08-31
+  ExtentType: Loco-regional
+  LocoRegionalSites: Intrathoracic lymph nodes
+}
+
+class "LastFollowUp4-Example" as LastFollowUp4 [[Binary-LastFollowUp4-Example.html]] {
+  VitalStatus: Alive
+  EvidenceOfDisease: True
+  Date: 2019-08-31
+}
+
+class "CancerConditionAtDiagnosis1-Example" as CancerConditionAtDiagnosis1 [[Binary-CancerConditionAtDiagnosis1-Example.html]] {}
+class "CancerPatient1-Example" as CancerPatient1 [[Binary-CancerPatient1-Example.html]] {}
+
+ClinicalCancerProgression4 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+LastFollowUp4 --> CancerPatient1 : subject
+@enduml

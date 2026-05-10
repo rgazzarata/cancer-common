@@ -2,3 +2,9 @@
 
 # No schematrons available for Logical Models
 
+# Example of a Custom Resource (no resourceType field by default)
+Unrecognized property 'resourceType'
+
+# Custom Resources reference cannot be resolved while validating (manually checked)
+Unable to resolve resource with reference 'http://hl7.eu/fhir/cancer-common/StructureDefinition/CancerConditionAtDiagnosis/CancerConditionAtDiagnosis1-Example'
+Unable to resolve resource with reference 'http://hl7.eu/fhir/cancer-common/StructureDefinition/ClinicalCancerProgression/ClinicalCancerProgression4-Example'

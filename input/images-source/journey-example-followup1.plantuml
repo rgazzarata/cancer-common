@@ -1,0 +1,22 @@
+@startuml
+top to bottom direction
+hide methods
+skinparam classAttributeIconSize 0
+
+class "ClinicalCancerProgression2-Example" as ClinicalCancerProgression2 [[Binary-ClinicalCancerProgression2-Example.html]] {
+  DiseaseStatus: Complete Remission
+  AssertedDate: 2019-02-28
+}
+
+class "LastFollowUp2-Example" as LastFollowUp2 [[Binary-LastFollowUp2-Example.html]] {
+  VitalStatus: Alive
+  EvidenceOfDisease: False
+  Date: 2019-02-28
+}
+
+class "CancerConditionAtDiagnosis1-Example" as CancerConditionAtDiagnosis1 [[Binary-CancerConditionAtDiagnosis1-Example.html]] {}
+class "CancerPatient1-Example" as CancerPatient1 [[Binary-CancerPatient1-Example.html]] {}
+
+ClinicalCancerProgression2 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+LastFollowUp2 --> CancerPatient1 : subject
+@enduml

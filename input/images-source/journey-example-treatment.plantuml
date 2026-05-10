@@ -1,0 +1,21 @@
+@startuml
+top to bottom direction
+hide methods
+skinparam classAttributeIconSize 0
+
+class "SystemicTreatment1-Example" as SystemicTreatment1 [[Binary-SystemicTreatment1-Example.html]] {
+  Intent: Definitive
+  Type: Chemotherapy (procedure)
+  StartDate: 2019-09-10
+  EndDate: 2019-12-16
+  Setting: Alone
+}
+
+class "CancerConditionAtDiagnosis1-Example" as CancerConditionAtDiagnosis1 [[Binary-CancerConditionAtDiagnosis1-Example.html]] {}
+class "CancerPatient1-Example" as CancerPatient1 [[Binary-CancerPatient1-Example.html]] {}
+class "ClinicalCancerProgression4-Example" as ClinicalCancerProgression4 [[Binary-ClinicalCancerProgression4-Example.html]] {}
+
+SystemicTreatment1 --> CancerPatient1 : subject
+SystemicTreatment1 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+SystemicTreatment1 --> ClinicalCancerProgression4 : ClinicalCancerProgression
+@enduml

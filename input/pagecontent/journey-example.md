@@ -45,7 +45,7 @@ This section therefore illustrates how the logical model can represent both simp
       <figcaption><strong>Figure 1 Data evolution: from diagnosis to radiotherapy</strong></figcaption>
     </figure>
   <p></p>
- </div>
+</div>
 
 ### Evidence + Overall Treatment Response (Complete Remission) (Date 4)
 This section shows the first post-treatment assessment at the logical level. New instances are created for:
@@ -55,35 +55,107 @@ This section shows the first post-treatment assessment at the logical level. New
 
 In this example, the response and disease status are recorded as Complete Remission, with the follow-up date aligned to the same assessment moment.
 
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-overalltreatmentresponse.svg %}
+      <figcaption><strong>Figure 2 Data evolution: Evidence and Overall Treatment Response</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
+
 ### Evidence + Follow-up Visits (Complete Remission) (Date 5)
 This section represents a follow-up visit where the previously recorded remission status is confirmed. Even when no clinical change is observed, the logical model captures the follow-up as a distinct event by creating:
 * a new ClinicalCancerProgression instance (confirmation of disease status),
 * a new LastFollowUp instance (patient status at this date).
 
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-followup1.svg %}
+      <figcaption><strong>Figure 3 Data evolution: Evidence and Follow-up Visit (1)</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
+
 ### Evidence + Follow-up Visits (Complete Remission) (Date 6) 
 This section represents an additional follow-up visit confirming the same disease status. New instances of ClinicalCancerProgression and LastFollowUp are created to preserve temporal traceability across repeated assessments.
+
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-followup2.svg %}
+      <figcaption><strong>Figure 4 Data evolution: Evidence and Follow-up Visit (2)</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
 
 ### Evidence + Follow-up Visits (Disease Evolution - Recurrence) (Date 7) 
 This section represents a disease evolution event identified during follow-up. A new ClinicalCancerProgression instance records Recurrence and the associated extent information. In this example, loco-regional extent is captured and a loco-regional site is provided using an illustrative ICD-O-3 code.
 
 A corresponding LastFollowUp instance records that the patient is alive with evidence of disease at the same time point.
 
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-followup3.svg %}
+      <figcaption><strong>Figure 5 Data evolution: Evidence and Follow-up Visit (3)</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
+
 ### Second Treatment (Date 8 - 9)
 This section represents a new treatment episode initiated following the documented recurrence. A SystemicTreatment instance captures treatment intent, type, and timing, and is explicitly linked to the ClinicalCancerProgression instance representing the recurrence that motivated the treatment.
 
 In this example, the systemic treatment type is illustrated using a SNOMED CT procedure code.
+
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-treatment.svg %}
+      <figcaption><strong>Figure 6 Data evolution: Second Treatment</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
 
 ### Evidence + Follow-up Visit (Partial Remission) (Date 10)
 This section represents the assessment performed after the systemic treatment course. A new OverallCancerTreatmentResponse instance records the response evaluation and explicitly references the previous recurrence context.
 
 A new ClinicalCancerProgression instance captures the updated disease status (Partial Remission) and associated extent information. A new LastFollowUp instance records patient status at the same follow-up date.
 
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-followup4.svg %}
+      <figcaption><strong>Figure 7 Data evolution: Evidence and Follow-up Visit (4)</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
+
 ### Evidence + Follow-up Visit (Progression) (Date 11)
 This section represents a further disease evolution event. A new ClinicalCancerProgression instance records Progression and metastatic extent, with an illustrative metastatic site code provided in this example.
 
 A corresponding LastFollowUp instance records that the patient remains alive with evidence of disease at the same time point.
 
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-followup5.svg %}
+      <figcaption><strong>Figure 8 Data evolution: Evidence and Follow-up Visit (5)</strong></figcaption>
+    </figure>
+  <p></p>
+</div>
+
 ### Patient's Death (Date 12)
 This final section records the patient outcome. A new LastFollowUp instance captures vital status as Dead, the date of death, and (when available) the cause of death.
 
 In this example, the cause of death is illustrated using an ICD-10 code.
+
+<div style="text-align:center;">
+  <p></p>
+    <figure>
+      {% include journey-example-death.svg %}
+      <figcaption><strong>Figure 9 Data evolution: Patient Death</strong></figcaption>
+    </figure>
+  <p></p>
+</div>

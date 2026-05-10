@@ -1,0 +1,24 @@
+@startuml
+top to bottom direction
+hide methods
+skinparam classAttributeIconSize 0
+
+class "ClinicalCancerProgression6-Example" as ClinicalCancerProgression6 [[Binary-ClinicalCancerProgression6-Example.html]] {
+  DiseaseStatus: Progression
+  AssertedDate: 2020-04-15
+  ExtentType: Metastatic
+  MetastaticSites: Short bones of upper limb and associated joints
+}
+
+class "LastFollowUp6-Example" as LastFollowUp6 [[Binary-LastFollowUp6-Example.html]] {
+  VitalStatus: Alive
+  EvidenceOfDisease: True
+  Date: 2020-04-15
+}
+
+class "CancerConditionAtDiagnosis1-Example" as CancerConditionAtDiagnosis1 [[Binary-CancerConditionAtDiagnosis1-Example.html]] {}
+class "CancerPatient1-Example" as CancerPatient1 [[Binary-CancerPatient1-Example.html]] {}
+
+ClinicalCancerProgression6 --> CancerConditionAtDiagnosis1 : CancerConditionAtDiagnosis
+LastFollowUp6 --> CancerPatient1 : subject
+@enduml
