@@ -27,9 +27,12 @@ Characteristics: #can-be-target
 * type 1..1 CodeableConcept "Type"
 * type ^definition = "It indicates whether the stage instance is of type Clinical or Pathological."
 * type ^comment = "It indicates whether the stage instance is of type Clinical or Pathological. Choice: Clinical | Pathological"
-* evidenceReference[x] 0..* Surgery or Imaging "EvidenceReference"
-* evidenceReference[x] ^definition = "Reference(s) to imaging (in case the stage is Clinical) or to surgery (in case the stage is Pathological)."
-* evidenceReference[x] ^comment = "It shall be present. The reference shall be to one or more imaging (in case the stage is Clinical) or to one surgery (in case the stage is Pathological)."
+* evidenceReferenceSurgery 0..* Surgery "EvidenceReference"
+* evidenceReferenceSurgery ^definition = "Reference(s) to surgery (in case the stage is Pathological)."
+* evidenceReferenceSurgery ^comment = "It shall be present. The reference shall be to one surgery (in case the stage is Pathological)."
+* evidenceReferenceImaging 0..* Imaging "EvidenceReference"
+* evidenceReferenceImaging ^definition = "Reference(s) to imaging (in case the stage is Clinical)."
+* evidenceReferenceImaging ^comment = "It shall be present. The reference shall be to one or more imaging (in case the stage is Clinical)."
 
 /* * surgeryReference 0..1 Reference(Surgery) "SurgeryReference"
 * surgeryReference ^definition = "It shall be present when the stage is of type Pathological and shall not be present when the stage is of type Clinical."
@@ -51,12 +54,12 @@ Expression: "type.text = 'Clinical' implies evidenceReferenceSurgery.empty()"
 Invariant: cs-ev-e2
 Description: "If type is Pathological, imaging evidence must not be provided."
 Severity: #error
-Expression: "type.text = 'Pathological' implies evidenceReference.empty()"
+Expression: "type.text = 'Pathological' implies evidenceReferenceImaging.empty()"
 Invariant: cs-tnm-1
 Description: "If classificationType is TNM, 3 values is expected."
 Severity: #warning
-Expression: "classificationType.text = 'TNM' implies value.count() >= 3"
+Expression: "classificationType.text = 'TNM' implies stage.count() >= 3"
 Invariant: cs-nontnm-1
 Description: "For non-TNM staging systems, a single value is typically expected."
 Severity: #warning
-Expression: "classificationType.text != 'TNM' implies value.count() = 1"
+Expression: "classificationType.text != 'TNM' implies stage.count() = 1"

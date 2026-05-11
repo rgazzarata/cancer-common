@@ -33,8 +33,8 @@ Characteristics: #can-be-target
 Invariant: st-1
 Description: "If ongoing is true, endDate must not be present; if endDate is not present, ongoing must be true."
 Severity: #error
-Expression: "(ongoing = true implies endDate.empty()) and (endDate.exists() implies ongoing.empty() or ongoing = false)"
+Expression: "((ongoing = true) implies endDate.empty()) and (endDate.exists() implies (ongoing.exists().not() or ongoing = false))"
 Invariant: st-2
 Description: "If endDate is present, it should be greater than or equal to startDate."
 Severity: #warning
-Expression: "endDate.empty() or endDate > StartDate"
+Expression: "endDate.empty() or endDate > startDate"
