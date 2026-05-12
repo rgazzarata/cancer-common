@@ -8,6 +8,20 @@ The scope of this Implementation Guide is to document this common model and to s
 
 By defining consistent concepts, relationships, and longitudinal structures, the model enables, among other outcomes, the reconstruction of a typical cancer journey.
 
+### How to Read This Guide
+
+This guide is organised progressively, from the general rationale of the model to its logical representation and implementation-oriented artefacts.
+
+Readers are encouraged to start from the **Introduction** section, which describes the scope, background, challenges, and reference materials for the European Cancer Common Data Model.
+
+The **Functional** section presents the model from a conceptual and clinical perspective. It describes the main concepts, their relationships, the cancer patient journey, and the evolution of data over time. This section is intended to help readers understand what the model represents and why the selected concepts are included.
+
+The **Logical** section provides the formal logical representation of the model. It defines the entities, attributes, relationships, cardinalities, and constraints that structure the European Cancer Common Logical Model. It also includes a worked example of how the logical model can be instantiated along a cancer patient journey.
+
+The **Implementation** section provides implementation-oriented material, including mappings from the logical model to HL7 FHIR and OMOP. This part of the guide is currently informative and still under development. The FHIR profiling work, detailed FHIR artefacts, and implementation mappings are expected to evolve in subsequent iterations.
+
+The **Artifacts** section contains the generated FHIR artefacts associated with this guide. At this stage, these artefacts should be interpreted in the context of the ongoing implementation work and not as a final normative specification.
+
 ### Purpose
 
 This project aims to define a **minimal**, **extensible**, and **non-exhaustive** European cancer data model that is:
@@ -35,6 +49,12 @@ Inputs include several European projects (e.g. IDEA4RC, PanCareSurPass, FLUTE ec
 ECCDM is informed by existing international specifications, including the HL7 US mCODE Implementation Guide, which provides valuable implementation experience in oncology. ECCDM, however, addresses European interoperability needs through a model-driven approach based on conceptual and logical foundations.
 
 In the European context, OMOP is widely adopted for research and secondary use, while HL7 FHIR is increasingly used for data exchange and interoperability. ECCDM is intended to provide a shared foundation that supports both representations and enables systematic mapping between OMOP and FHIR.
+
+The development of the European Cancer Common Data Model has been documented through the HL7 Europe project workspace on Confluence. The Confluence space collects working materials, discussions, intermediate decisions, and supporting documentation produced during the collaborative development of the model.
+
+This Implementation Guide represents the formal publication view of the work, while the Confluence space provides additional project context and traceability of the modelling process.
+
+Project workspace: [Cancer Common Model Project - Edition 1](https://confluence.hl7.org/spaces/HEU/pages/281282385/Cancer+Common+Model+Project+Edition+1)
 
 ### Example Scenarios
 

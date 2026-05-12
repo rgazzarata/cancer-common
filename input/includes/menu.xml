@@ -44,7 +44,7 @@
                 <a class="dropdown-item maturity-green" href="logicalmodels.html">Logical Model</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="journey-example.html">Cancer Patient Journey Example</a>
+                <a class="dropdown-item maturity-green" href="journey-example.html">Cancer Patient Journey Example</a>
             </li>
         </ul>
     </li>

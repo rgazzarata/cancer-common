@@ -27,34 +27,24 @@ Characteristics: #can-be-target
 * type 1..1 CodeableConcept "Type"
 * type ^definition = "It indicates whether the stage instance is of type Clinical or Pathological."
 * type ^comment = "It indicates whether the stage instance is of type Clinical or Pathological. Choice: Clinical | Pathological"
-* evidenceReferenceSurgery 0..* Surgery "EvidenceReference"
-* evidenceReferenceSurgery ^definition = "Reference(s) to surgery (in case the stage is Pathological)."
-* evidenceReferenceSurgery ^comment = "It shall be present. The reference shall be to one surgery (in case the stage is Pathological)."
-* evidenceReferenceImaging 0..* Imaging "EvidenceReference"
-* evidenceReferenceImaging ^definition = "Reference(s) to imaging (in case the stage is Clinical)."
-* evidenceReferenceImaging ^comment = "It shall be present. The reference shall be to one or more imaging (in case the stage is Clinical)."
+* evidenceReference 0..* Reference(Surgery or Imaging) "EvidenceReference"
+* evidenceReference ^definition = "Reference(s) to the evidence used to define the stage: imaging in case of a Clinical stage, or surgery in case of a Pathological stage."
+* evidenceReference ^comment = "It shall be present. The reference shall be to one or more imaging procedures in case the stage is Clinical, or to one surgery in case the stage is Pathological."
 
 /* * surgeryReference 0..1 Reference(Surgery) "SurgeryReference"
 * surgeryReference ^definition = "It shall be present when the stage is of type Pathological and shall not be present when the stage is of type Clinical."
 * imagingReference 0..* Reference(Imaging) "ImagingReference"
 * imagingReference ^definition = "It shall be present when the stage is of type Clinical and shall not be present when the stage is of type Pathological." */
 
-Invariant: cs-ev-w1
-Description: "If type is Clinical, imaging evidence should be provided."
-Severity: #warning
-Expression: "type.text = 'Clinical' implies evidenceReferenceImaging.exists()"
-Invariant: cs-ev-w2
-Description: "If type is Pathological, surgical evidence should be provided."
-Severity: #warning
-Expression: "type.text = 'Pathological' implies evidenceReferenceSurgery.exists()"
+
 Invariant: cs-ev-e1
-Description: "If type is Clinical, surgical evidence must not be provided."
+Description: "If type is Clinical, imaging evidence must not be provided."
 Severity: #error
-Expression: "type.text = 'Clinical' implies evidenceReferenceSurgery.empty()"
+Expression: "type.text = 'Clinical' implies evidenceReference.resolve().ofType(Imaging).empty()"
 Invariant: cs-ev-e2
-Description: "If type is Pathological, imaging evidence must not be provided."
+Description: "If type is Pathological, surgery evidence must not be provided."
 Severity: #error
-Expression: "type.text = 'Pathological' implies evidenceReferenceImaging.empty()"
+Expression: "type.text = 'Pathological' implies evidenceReference.resolve().ofType(Surgery).empty()"
 Invariant: cs-tnm-1
 Description: "If classificationType is TNM, 3 values is expected."
 Severity: #warning

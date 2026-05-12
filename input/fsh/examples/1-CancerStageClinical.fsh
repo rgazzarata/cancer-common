@@ -17,4 +17,4 @@ Usage: #example
 * type.coding[0].display = "Clinical"
 * type.text = "Clinical"
 
-* evidenceReferenceImaging[+] = Imaging1-Example
+* evidenceReference[+] = Reference(Imaging1-Example)
