@@ -154,14 +154,32 @@ caption {
   background-color: #fff3b0; /* soft yellow */
 }
 
-/* Hover vert */
-.navbar-nav li a.maturity-green:hover {
+/* Maturity / readiness indicators used in the main navigation */
+.navbar-nav li a.maturity-green {
   background: #28a745 !important;
+  color: #ffffff !important;
 }
 
-/* Hover orange */
-.navbar-nav li a.maturity-orange:hover {
+.navbar-nav li a.maturity-green:hover,
+.navbar-nav li.open > a.maturity-green,
+.navbar-nav li.open > a.maturity-green:hover,
+.navbar-nav li.open > a.maturity-green:focus {
+  background: #218838 !important;
+  color: #ffffff !important;
+}
+
+/* Informative content indicators used in the main navigation */
+.navbar-nav li a.maturity-orange {
   background: #fd7e14 !important;
+  color: #ffffff !important;
+}
+
+.navbar-nav li a.maturity-orange:hover,
+.navbar-nav li.open > a.maturity-orange,
+.navbar-nav li.open > a.maturity-orange:hover,
+.navbar-nav li.open > a.maturity-orange:focus {
+  background: #dc6502 !important;
+  color: #ffffff !important;
 }
 /****************************
      * SCOPED STYLES

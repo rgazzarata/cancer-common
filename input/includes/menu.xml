@@ -4,7 +4,7 @@
         <a href="index.html">Home</a>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Introduction<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item maturity-green" href="scope.html">Scope and Content</a>
@@ -21,7 +21,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Functional<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item maturity-green" href="conceptualmodel.html">Conceptual Model</a>
@@ -38,7 +38,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Logical<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item maturity-green" href="logicalmodels.html">Logical Model</a>
@@ -49,7 +49,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">Implementation<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item maturity-orange" href="fhirmodelmap.html">Model Map - FHIR</a>
@@ -82,7 +82,21 @@
             </li>
         </ul>
     </li>
-    <li>
-        <a class="maturity-orange" href="artifacts.html">Artifacts</a>
+    <li class="dropdown">
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">Artifacts<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item maturity-orange" href="artifacts.html">Artifacts Summary</a>
+            </li>
+            <li>
+                <a class="dropdown-item maturity-orange" href="artifacts.html#structures">Structures</a>
+            </li>
+            <li>
+                <a class="dropdown-item maturity-orange" href="artifacts.html#examples">Examples</a>
+            </li>
+            <li>
+                <a class="dropdown-item maturity-orange" href="downloads.html">Downloads</a>
+            </li>
+        </ul>
     </li>
 </ul>
