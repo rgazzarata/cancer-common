@@ -60,25 +60,25 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">About<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">About<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item" href="authors.html">Authors and Contributors</a>
+                <a class="dropdown-item maturity-orange" href="authors.html">Authors and Contributors</a>
             </li>
             <li>
-                <a class="dropdown-item" href="knownissues.html">Known Issues</a>
+                <a class="dropdown-item maturity-orange" href="knownissues.html">Known Issues</a>
             </li>
             <li>
-                <a class="dropdown-item" href="downloads.html">Download</a>
+                <a class="dropdown-item maturity-orange" href="downloads.html">Download</a>
             </li>
             <li>
-                <a class="dropdown-item" href="dependencies.html">Dependencies</a>
+                <a class="dropdown-item maturity-orange" href="dependencies.html">Dependencies</a>
             </li>
             <li>
-                <a class="dropdown-item" href="copyright.html">Copyright</a>
+                <a class="dropdown-item maturity-orange" href="copyright.html">Copyright</a>
             </li>
             <li>
-                <a class="dropdown-item" href="crossversionanalysis.html">Cross-version Analysis</a>
+                <a class="dropdown-item maturity-orange" href="crossversionanalysis.html">Cross-version Analysis</a>
             </li>
         </ul>
     </li>
@@ -87,12 +87,6 @@
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item maturity-orange" href="artifacts.html">Artifacts Summary</a>
-            </li>
-            <li>
-                <a class="dropdown-item maturity-orange" href="artifacts.html#structures">Structures</a>
-            </li>
-            <li>
-                <a class="dropdown-item maturity-orange" href="artifacts.html#examples">Examples</a>
             </li>
             <li>
                 <a class="dropdown-item maturity-orange" href="downloads.html">Downloads</a>

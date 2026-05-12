@@ -10,7 +10,7 @@
       This page is provided for orientation and review. It is not a normative or implementation-ready specification; mappings, target artefacts and profiling details are expected to evolve in subsequent iterations of this guide.
     </div>
   </div>
-  <h3>Cancer Logical Models â†’ OMOP</h3>
+  <h3>Cancer Logical Models to OMOP</h3>
   <a>   </a>
   <p>
     The table below lists the cancer logical models and their corresponding OMOP tables in this IG.
@@ -22,7 +22,7 @@
     <li>a placeholder link for mapping details</li>
   </ul>
   <h4>
-    <span class="group-emoji">ðŸ§©</span> Cancer Logical Models
+    <span class="group-emoji"></span> Cancer Logical Models
   </h4>
   <a>   </a>
   <div class="table-wrapper">
@@ -160,4 +160,3 @@
     </table>
   </div>
 </div>
-
