@@ -4,9 +4,10 @@ Profile: ObservationComorbiditiesEuCcm
 Parent: Observation
 Id: observation-comorbidity-eu-ccm
 Title: "Observation: Comorbidities"
-Description: """This profile constrains the Observation resource to represent Comorbidities for the purpose of the IDEA4RC project.
+Description: """This profile constrains the Observation resource to represent Comorbidities for the purpose of the ECCDM.
 This profiles is adapted from the mCode FHIR Implementation Guide
 """
+* insert SetFmmandStatusRule ( 0, informative )
 * code = $loinc#75618-9 "Comorbid condition" // SCT#398192003 Co-morbid conditions (finding) in mCode
 * method ^short = "Comorbidity framework used."
 * method ^definition = "The formal methodology used, such as Charlson, NCI, Elixhauser, or ACE-27. The method must be specified if a comorbidity index is specified, otherwise the index cannot be correctly interpreted."

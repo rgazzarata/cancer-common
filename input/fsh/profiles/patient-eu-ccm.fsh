@@ -5,7 +5,8 @@ Profile:  PatientEuCcm
 Parent:   PatientEu
 Id:       patient-eu-ccm
 Title:    "Patient (CCM)"
-Description: "This profile defines how to represent Patient in FHIR for the purpose of the IDEA4RC project."
+Description: "This profile defines how to represent Patient in FHIR for the purpose of the ECCDM."
+* insert SetFmmandStatusRule ( 0, informative )
 
 //-------------------------------------------------------------------------------------------
 * . ^short = "Information about an individual receiving health care services"

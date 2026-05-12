@@ -22,6 +22,8 @@ The **Implementation** section provides implementation-oriented material, includ
 
 The **Artifacts** section contains the generated FHIR artefacts associated with this guide. At this stage, these artefacts should be interpreted in the context of the ongoing implementation work and not as a final normative specification.
 
+Menu entries highlighted in **green** identify content proposed as ready for review and evaluation in this publication. Menu entries highlighted in **orange** identify **informative** content: these pages are provided to support understanding, orientation, and future implementation work, but they should not be interpreted as final normative specifications.
+
 ### Purpose
 
 This project aims to define a **minimal**, **extensible**, and **non-exhaustive** European cancer data model that is:

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
@@ -6,6 +6,12 @@
   </head>
   <body>
     <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box informative-box">
+          <strong>Informative content</strong>
+          This page is provided for orientation and review. It is not a normative or implementation-ready specification; mappings, target artefacts and profiling details are expected to evolve in subsequent iterations of this guide.
+        </div>
+      </div>
       <div class="callout-wrapper">
         <div class="callout-box">
           <strong>Yellow row/cells:</strong>
@@ -98,4 +104,6 @@
     </p>
   </body>
 </div>
+
+
 

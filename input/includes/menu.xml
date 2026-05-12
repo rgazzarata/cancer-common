@@ -83,6 +83,6 @@
         </ul>
     </li>
     <li>
-        <a href="artifacts.html">Artifacts</a>
+        <a class="maturity-orange" href="artifacts.html">Artifacts</a>
     </li>
 </ul>

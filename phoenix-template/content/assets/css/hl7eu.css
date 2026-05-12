@@ -201,6 +201,10 @@ caption {
       display: block;
       margin-bottom: 0.4rem;
     }
+    .model-map-block .informative-box {
+      border-color: #e2a957;
+      background: #fff4e5;
+    }
     /****************************
      * TABLE STYLE (reused for each group)
      ****************************/
