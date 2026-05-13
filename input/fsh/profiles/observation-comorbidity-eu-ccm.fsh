@@ -4,7 +4,7 @@ Profile: ObservationComorbiditiesEuCcm
 Parent: Observation
 Id: observation-comorbidity-eu-ccm
 Title: "Observation: Comorbidities"
-Description: """This profile constrains the Observation resource to represent Comorbidities for the purpose of the ECCDM.
+Description: """This informative profile constrains the Observation resource to represent Comorbidities for the purpose of the ECCDM. It is provided as future implementation-oriented content in this publication and is expected to evolve in subsequent iterations of this guide.
 This profiles is adapted from the mCode FHIR Implementation Guide
 """
 * insert SetFmmandStatusRule ( 0, informative )

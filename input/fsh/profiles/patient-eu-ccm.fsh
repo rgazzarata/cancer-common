@@ -5,7 +5,7 @@ Profile:  PatientEuCcm
 Parent:   PatientEu
 Id:       patient-eu-ccm
 Title:    "Patient (CCM)"
-Description: "This profile defines how to represent Patient in FHIR for the purpose of the ECCDM."
+Description: "This informative profile defines how to represent Patient in FHIR for the purpose of the ECCDM. It is provided as future implementation-oriented content in this publication and is expected to evolve in subsequent iterations of this guide."
 * insert SetFmmandStatusRule ( 0, informative )
 
 //-------------------------------------------------------------------------------------------
