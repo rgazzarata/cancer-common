@@ -4,92 +4,92 @@
         <a href="index.html">Home</a>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Introduction<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-green" href="scope.html">Scope and Content</a>
+                <a class="dropdown-item" href="scope.html">Scope and Content</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="background.html">Background</a>
+                <a class="dropdown-item" href="background.html">Background</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="challenges.html">Challenges</a>
+                <a class="dropdown-item" href="challenges.html">Challenges</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="references.html">References</a>
+                <a class="dropdown-item" href="references.html">References</a>
             </li>
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Functional<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-green" href="conceptualmodel.html">Conceptual Model</a>
+                <a class="dropdown-item" href="conceptualmodel.html">Conceptual Model</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="glossary.html">Glossary</a>
+                <a class="dropdown-item" href="glossary.html">Glossary</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="journey.html">Cancer Patient Journey</a>
+                <a class="dropdown-item" href="journey.html">Cancer Patient Journey</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="journey-data-evolution.html">Data Evolution</a>
+                <a class="dropdown-item" href="journey-data-evolution.html">Data Evolution</a>
             </li>
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-green">Logical<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-green" href="logicalmodels.html">Logical Model</a>
+                <a class="dropdown-item" href="logicalmodels.html">Logical Model</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-green" href="journey-example.html">Cancer Patient Journey Example</a>
+                <a class="dropdown-item" href="journey-example.html">Cancer Patient Journey Example</a>
             </li>
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">Implementation<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-gray">Implementation<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-orange" href="fhirmodelmap.html">Model Map - FHIR</a>
+                <a class="dropdown-item maturity-gray" href="fhirmodelmap.html">Model Map - FHIR</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="omopmodelmap.html">Model Map - OMOP</a>
+                <a class="dropdown-item maturity-gray" href="omopmodelmap.html">Model Map - OMOP</a>
             </li>
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">About<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">About<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-orange" href="authors.html">Authors and Contributors</a>
+                <a class="dropdown-item" href="authors.html">Authors and Contributors</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="knownissues.html">Known Issues</a>
+                <a class="dropdown-item" href="knownissues.html">Known Issues</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="downloads.html">Download</a>
+                <a class="dropdown-item" href="downloads.html">Download</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="dependencies.html">Dependencies</a>
+                <a class="dropdown-item" href="dependencies.html">Dependencies</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="copyright.html">Copyright</a>
+                <a class="dropdown-item" href="copyright.html">Copyright</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="crossversionanalysis.html">Cross-version Analysis</a>
+                <a class="dropdown-item" href="crossversionanalysis.html">Cross-version Analysis</a>
             </li>
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle maturity-orange">Artifacts<b class="caret"></b></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item maturity-orange" href="artifacts.html">Artifacts Summary</a>
+                <a class="dropdown-item" href="artifacts.html">Artifacts Summary</a>
             </li>
             <li>
-                <a class="dropdown-item maturity-orange" href="downloads.html">Downloads</a>
+                <a class="dropdown-item" href="downloads.html">Downloads</a>
             </li>
         </ul>
     </li>

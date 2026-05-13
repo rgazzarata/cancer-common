@@ -1,5 +1,12 @@
 ### Scope
 
+<div class="callout-wrapper">
+  <div class="callout-box contextual-box">
+    <strong>Contextual information</strong>
+    This page provides background and orientation for the guide. It supports understanding of the proposed model, but it is not itself a model artefact or an implementation specification submitted for evaluation.
+  </div>
+</div>
+
 The **HL7 Europe Cancer Common Data Model (ECCDM)** initiative aims to define a European common data model for cancer: a **minimal**, **shared**, and **extensible set of concepts** and **relationships** capable of representing cancer-related information across different contexts and use cases.
 
 The scope of the initiative is to define a model that is **agnostic to cancer type** and **independent from specific technical standards**, providing a **common conceptual and logical backbone** that can be progressively extended over time.
@@ -18,11 +25,11 @@ The **Functional** section presents the model from a conceptual and clinical per
 
 The **Logical** section provides the formal logical representation of the model. It defines the entities, attributes, relationships, cardinalities, and constraints that structure the European Cancer Common Logical Model. It also includes a worked example of how the logical model can be instantiated along a cancer patient journey.
 
-The **Implementation** section provides implementation-oriented material, including mappings from the logical model to HL7 FHIR and OMOP. This part of the guide is currently informative and still under development. The FHIR profiling work, detailed FHIR artefacts, and implementation mappings are expected to evolve in subsequent iterations.
+The **Implementation** section provides implementation-oriented material, including mappings from the logical model to HL7 FHIR and OMOP. This part of the guide is informative and included to show the expected direction of future work. The FHIR profiling work, detailed FHIR artefacts, and implementation mappings are expected to evolve in subsequent iterations.
 
 The **Artifacts** section contains the generated FHIR artefacts associated with this guide. At this stage, these artefacts should be interpreted in the context of the ongoing implementation work and not as a final normative specification.
 
-Menu entries highlighted in **green** identify content proposed as ready for review and evaluation in this publication. Menu entries highlighted in **orange** identify **informative** content: these pages are provided to support understanding, orientation, and future implementation work, but they should not be interpreted as final normative specifications.
+The **Functional** and **Logical** sections contain the proposed model content for review and evaluation in this publication. The **Home** and **Introduction** pages provide contextual information supporting that review. The **Implementation** section is highlighted in grey to indicate future implementation-oriented content that is informative only at this stage.
 
 ### Purpose
 

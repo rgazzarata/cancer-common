@@ -154,32 +154,47 @@ caption {
   background-color: #fff3b0; /* soft yellow */
 }
 
-/* Maturity / readiness indicators used in the main navigation */
-.navbar-nav li a.maturity-green {
-  background: #28a745 !important;
+/* Informative/future implementation indicators used in the main navigation */
+.navbar-nav li a.maturity-gray {
+  background: #6c757d !important;
   color: #ffffff !important;
 }
 
-.navbar-nav li a.maturity-green:hover,
-.navbar-nav li.open > a.maturity-green,
-.navbar-nav li.open > a.maturity-green:hover,
-.navbar-nav li.open > a.maturity-green:focus {
-  background: #218838 !important;
+.navbar-nav li a.maturity-gray:hover,
+.navbar-nav li.open > a.maturity-gray,
+.navbar-nav li.open > a.maturity-gray:hover,
+.navbar-nav li.open > a.maturity-gray:focus {
+  background: #5a6268 !important;
   color: #ffffff !important;
 }
 
-/* Informative content indicators used in the main navigation */
-.navbar-nav li a.maturity-orange {
-  background: #fd7e14 !important;
-  color: #ffffff !important;
+.callout-wrapper {
+  margin: 1rem 0 2rem 0;
 }
 
-.navbar-nav li a.maturity-orange:hover,
-.navbar-nav li.open > a.maturity-orange,
-.navbar-nav li.open > a.maturity-orange:hover,
-.navbar-nav li.open > a.maturity-orange:focus {
-  background: #dc6502 !important;
-  color: #ffffff !important;
+.callout-box {
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+  padding: 0.75rem 1rem;
+  line-height: 1.4;
+}
+
+.callout-box strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contextual-box {
+  border-color: #9ec5fe;
+  border-left: 4px solid #2f80ed;
+  background: #eef6ff;
+}
+
+.informative-box {
+  border-color: #b6c2cf;
+  border-left: 4px solid #6c757d;
+  background: #f6f8fa;
 }
 /****************************
      * SCOPED STYLES
@@ -207,21 +222,6 @@ caption {
      ****************************/
     .model-map-block .callout-wrapper {
       margin: 1rem 0 2rem 0;
-    }
-    .model-map-block .callout-box {
-      border-radius: 8px;
-      border: 1px solid #d6c78a;
-      background: #fff8d6;
-      padding: 0.75rem 1rem;
-      line-height: 1.4;
-    }
-    .model-map-block .callout-box strong {
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-    .model-map-block .informative-box {
-      border-color: #e2a957;
-      background: #fff4e5;
     }
     /****************************
      * TABLE STYLE (reused for each group)

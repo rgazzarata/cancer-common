@@ -8,8 +8,8 @@
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box informative-box">
-          <strong>Informative content</strong>
-          This page is provided for orientation and review. It is not a normative or implementation-ready specification; mappings, target artefacts and profiling details are expected to evolve in subsequent iterations of this guide.
+          <strong>Future implementation content</strong>
+          This page is provided to show the expected direction of future implementation work. It is not part of the proposed material for evaluation in this publication; mappings, target artefacts and profiling details are expected to evolve in subsequent iterations of this guide.
         </div>
       </div>
       <div class="callout-wrapper">
