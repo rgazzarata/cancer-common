@@ -196,6 +196,30 @@ caption {
   border-left: 4px solid #6c757d;
   background: #f6f8fa;
 }
+
+.artifact-informative-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid #b6c2cf;
+  border-radius: 4px;
+  background: #f6f8fa;
+  color: #495057;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.artifact-informative-note {
+  border: 1px solid #b6c2cf;
+  border-left: 4px solid #6c757d;
+  border-radius: 8px;
+  background: #f6f8fa;
+  color: #1a1a1a;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.65rem 0.85rem;
+}
 /****************************
      * SCOPED STYLES
      ****************************/
