@@ -18,7 +18,42 @@
 
 <script>
   (function () {
-    if (!/\/artifacts\.html$/.test(window.location.pathname)) {
+    var path = window.location.pathname;
+
+    var informativeProfilePages = {
+      "/StructureDefinition-patient-eu-ccm.html": true,
+      "/StructureDefinition-observation-comorbidity-eu-ccm.html": true
+    };
+
+    function isInformativeProfilePage() {
+      for (var suffix in informativeProfilePages) {
+        if (Object.prototype.hasOwnProperty.call(informativeProfilePages, suffix) && path.slice(-suffix.length) === suffix) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    if (isInformativeProfilePage()) {
+      var title = document.querySelector("h1, h2");
+      if (!title || document.querySelector(".artifact-informative-note")) {
+        return;
+      }
+
+      var profileBadge = document.createElement("span");
+      profileBadge.className = "artifact-informative-badge";
+      profileBadge.textContent = "Informative";
+      profileBadge.title = "This generated FHIR profile is provided as informative implementation-oriented content in this publication.";
+      title.appendChild(profileBadge);
+
+      var profileNote = document.createElement("div");
+      profileNote.className = "artifact-informative-note";
+      profileNote.innerHTML = "<strong>Future implementation content</strong> This generated FHIR profile is provided as informative implementation-oriented content in this publication and is expected to evolve in subsequent iterations of this guide.";
+      title.parentNode.insertBefore(profileNote, title.nextSibling);
+      return;
+    }
+
+    if (!/\/artifacts\.html$/.test(path)) {
       return;
     }
 
