@@ -2,15 +2,13 @@ Instance: CancerConditionAtDiagnosis1-Example
 InstanceOf: CancerConditionAtDiagnosis
 Usage: #example
 
-* subject = CancerPatient1-Example
+* subject = Reference(CancerPatient1-Example)
 
 * histologyBehaviour.coding[0].system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
-* histologyBehaviour.coding[0].version = "3"
 * histologyBehaviour.coding[0].code = #8140/3
 * histologyBehaviour.coding[0].display = "Adenocarcinoma, NOS"
 
 * bodySite.coding[0].system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
-* bodySite.coding[0].version = "3"
 * bodySite.coding[0].code = #C34.3
 * bodySite.coding[0].display = "Lower lobe, lung"
 

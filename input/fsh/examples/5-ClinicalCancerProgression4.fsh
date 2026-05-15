@@ -6,7 +6,6 @@ Usage: #example
 * diseaseStatus.text = "Recurrence"
 * assertedDate = "2019-08-31"
 * extentType.text = "Loco-regional"
-* locoRegionalSites.coding[0].system = "ICDO"
-* locoRegionalSites.coding[0].version = "3"
+* locoRegionalSites.coding[0].system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
 * locoRegionalSites.coding[0].code = #C77.1
 * locoRegionalSites.coding[0].display = "Intrathoracic lymph nodes"

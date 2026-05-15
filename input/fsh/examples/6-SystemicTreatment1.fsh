@@ -2,7 +2,7 @@ Instance: SystemicTreatment1-Example
 InstanceOf: SystemicTreatment
 Usage: #example
 
-* subject = CancerPatient1-Example
+* subject = Reference(CancerPatient1-Example)
 * cancerConditionAtDiagnosisReference = Reference(CancerConditionAtDiagnosis1-Example)
 * clinicalCancerProgressionReference = Reference(ClinicalCancerProgression4-Example)
 * intent.text = "Definitive"

@@ -20,11 +20,11 @@ Description: "This informative profile defines how to represent Patient in FHIR 
 * extension[recordedSexOrGender] 
 
 * extension[recordedSexOrGender].extension[value] ^example.label = "sex-assigned-at-birth"
-* extension[recordedSexOrGender].extension[value].valueCodeableConcept ^example.valueCodeableConcept = $administrative-gender#female
+* extension[recordedSexOrGender].extension[value] ^example.valueCodeableConcept = $administrative-gender#female
 
 * extension[recordedSexOrGender].extension[type] 1..
 * extension[recordedSexOrGender].extension[type] ^example.label = "sex-assigned-at-birth"
-* extension[recordedSexOrGender].extension[type].valueCodeableConcept ^example.valueCodeableConcept = $loinc#76689-9 "Sex assigned at birth" 
+* extension[recordedSexOrGender].extension[type] ^example.valueCodeableConcept = $loinc#76689-9 "Sex assigned at birth" 
 
 
 

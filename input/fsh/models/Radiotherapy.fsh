@@ -5,7 +5,7 @@ Description: "Logical model representing a radiotherapy treatment course adminis
 Characteristics: #can-be-target
 
 * obeys rt-1
-* subject 1..1 CancerPatient "Subject"
+* subject 1..1 Reference(CancerPatient) "Subject"
 * subject ^definition = "Reference to the patient (subject) receiving radiotherapy."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"
 * cancerConditionAtDiagnosisReference ^definition = "Reference to the cancer condition at diagnosis targeted by radiotherapy."
