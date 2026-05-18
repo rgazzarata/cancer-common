@@ -4,7 +4,7 @@ Title: "Surgery"
 Description: "Logical model representing a surgical treatment episode delivered to the patient for cancer management. Derived from Cancer_Common_Logical_Model_20260521.xlsx (sheet Surgery)."
 Characteristics: #can-be-target
 
-* subject 1..1 CancerPatient "Subject"
+* subject 1..1 Reference(CancerPatient) "Subject"
 * subject ^definition = "Reference to the patient (subject) undergoing the surgery."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerCondition AtDiagnosis Reference"
 * cancerConditionAtDiagnosisReference ^definition = "Reference to the cancer condition at diagnosis targeted by the surgery."

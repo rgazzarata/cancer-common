@@ -2,9 +2,15 @@
 
 # No schematrons available for Logical Models
 
-# Example of a Custom Resource (no resourceType field by default)
-Unrecognized property 'resourceType'
-
 # Custom Resources reference cannot be resolved while validating (manually checked)
-Unable to resolve resource with reference 'http://hl7.eu/fhir/cancer-common/StructureDefinition/CancerConditionAtDiagnosis/CancerConditionAtDiagnosis1-Example'
-Unable to resolve resource with reference 'http://hl7.eu/fhir/cancer-common/StructureDefinition/ClinicalCancerProgression/ClinicalCancerProgression4-Example'
+Unable to resolve resource with reference 'http://hl7.eu/fhir/cancer-common/StructureDefinition/%
+
+# Custom Model examples without complete terminology 
+Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+Unknown Code 'C34.3' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/icd-o-3' version '2000' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code 'C77.1' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/icd-o-3' version '2000' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code 'C40.1' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/icd-o-3' version '2000' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code 'C77.0' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/icd-o-3' version '2000' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+
+# Detailed description in page journey-example.html
+Unable to find ImplementationGuide.definition.resource.description for the resource Binary%

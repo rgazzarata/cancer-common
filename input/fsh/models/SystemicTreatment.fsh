@@ -6,7 +6,7 @@ Characteristics: #can-be-target
 
 * obeys st-1
 * obeys st-2
-* subject 1..1 CancerPatient "Subject"
+* subject 1..1 Reference(CancerPatient) "Subject"
 * subject ^definition = "Reference to the patient (subject) receiving systemic treatment."
 * cancerConditionAtDiagnosisReference 1..1 Reference(CancerConditionAtDiagnosis) "CancerConditionAtDiagnosisReference"
 * cancerConditionAtDiagnosisReference ^definition = "Reference to the cancer condition at diagnosis targeted by systemic treatment."
